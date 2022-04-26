@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Metal
 
 public protocol Stackable {
     associatedtype Element
@@ -58,7 +57,6 @@ extension Stack: ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: ArrayLiteralElement...) {
         storage = elements
     }
-    
 }
 
 public struct StackIterator<Element>: IteratorProtocol {

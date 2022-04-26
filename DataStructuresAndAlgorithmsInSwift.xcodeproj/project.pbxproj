@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D1F8A9E2817A7A500A59907 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0D1F8A9D2817A7A500A59907 /* README.md */; };
 		0D1F8AA12818323A00A59907 /* StackChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F8AA02818323A00A59907 /* StackChallengeTests.swift */; };
+		0D1F8AA42818381C00A59907 /* StackChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F8AA22818380600A59907 /* StackChallenges.swift */; };
 		0D9FB2582815E72B009F7D80 /* Stack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9FB24F2815E72B009F7D80 /* Stack.framework */; };
 		0D9FB25D2815E72B009F7D80 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FB25C2815E72B009F7D80 /* StackTests.swift */; };
 		0D9FB25E2815E72B009F7D80 /* Stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D9FB2522815E72B009F7D80 /* Stack.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +30,7 @@
 		0D1F8A9D2817A7A500A59907 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = DataStructuresAndAlgorithmsInSwift/README.md; sourceTree = SOURCE_ROOT; };
 		0D1F8A9F2817A7A800A59907 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = DataStructuresAndAlgorithmsInSwift/README.md; sourceTree = "<group>"; };
 		0D1F8AA02818323A00A59907 /* StackChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackChallengeTests.swift; sourceTree = "<group>"; };
+		0D1F8AA22818380600A59907 /* StackChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackChallenges.swift; sourceTree = "<group>"; };
 		0D9FB24F2815E72B009F7D80 /* Stack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D9FB2522815E72B009F7D80 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		0D9FB2572815E72B009F7D80 /* StackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1F8AA52818382100A59907 /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				0D1F8AA22818380600A59907 /* StackChallenges.swift */,
+				0D1F8AA02818323A00A59907 /* StackChallengeTests.swift */,
+			);
+			path = Challenges;
+			sourceTree = "<group>";
+		};
 		0D9FB2432815E6CB009F7D80 = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				0D9FB25C2815E72B009F7D80 /* StackTests.swift */,
-				0D1F8AA02818323A00A59907 /* StackChallengeTests.swift */,
+				0D1F8AA52818382100A59907 /* Challenges */,
 			);
 			path = StackTests;
 			sourceTree = "<group>";
@@ -214,6 +225,7 @@
 			files = (
 				0D1F8AA12818323A00A59907 /* StackChallengeTests.swift in Sources */,
 				0D9FB25D2815E72B009F7D80 /* StackTests.swift in Sources */,
+				0D1F8AA42818381C00A59907 /* StackChallenges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
