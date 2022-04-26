@@ -28,7 +28,7 @@ public protocol Stackable {
 
 public struct Stack<Element>: Stackable {
 
-    private var storage: [Element] = []
+    private var storage = [Element]()
     
     public init(_ elements: [Element]) {
         self.storage = elements
@@ -57,6 +57,24 @@ extension Stack: ExpressibleByArrayLiteral {
     
     public init(arrayLiteral elements: ArrayLiteralElement...) {
         storage = elements
+    }
+}
+
+public struct StackIterator<Element>: IteratorProtocol {
+    var storage = [Element]()
+    
+    init(_ storage: [Element]) {
+        self.storage = storage
+    }
+    
+    mutating public func next() -> Element? {
+        return storage.popLast()
+    }
+}
+
+extension Stack: Sequence {
+    public func makeIterator() -> StackIterator<Element> {
+        return StackIterator(storage)
     }
 }
 
