@@ -58,16 +58,17 @@ extension Stack: ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: ArrayLiteralElement...) {
         storage = elements
     }
+    
 }
 
 public struct StackIterator<Element>: IteratorProtocol {
-    var storage = [Element]()
+    private var storage = [Element]()
     
     init(_ storage: [Element]) {
         self.storage = storage
     }
     
-    mutating public func next() -> Element? {
+    public mutating func next() -> Element? {
         return storage.popLast()
     }
 }
