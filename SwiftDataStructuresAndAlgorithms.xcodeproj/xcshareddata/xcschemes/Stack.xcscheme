@@ -17,7 +17,7 @@
                BlueprintIdentifier = "0D9FB24E2815E72B009F7D80"
                BuildableName = "Stack.framework"
                BlueprintName = "Stack"
-               ReferencedContainer = "container:DataStructuresAndAlgorithmsInSwift.xcodeproj">
+               ReferencedContainer = "container:SwiftDataStructuresAndAlgorithms.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "0D9FB2562815E72B009F7D80"
                BuildableName = "StackTests.xctest"
                BlueprintName = "StackTests"
-               ReferencedContainer = "container:DataStructuresAndAlgorithmsInSwift.xcodeproj">
+               ReferencedContainer = "container:SwiftDataStructuresAndAlgorithms.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -63,7 +63,7 @@
             BlueprintIdentifier = "0D9FB24E2815E72B009F7D80"
             BuildableName = "Stack.framework"
             BlueprintName = "Stack"
-            ReferencedContainer = "container:DataStructuresAndAlgorithmsInSwift.xcodeproj">
+            ReferencedContainer = "container:SwiftDataStructuresAndAlgorithms.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

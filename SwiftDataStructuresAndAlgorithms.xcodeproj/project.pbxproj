@@ -168,7 +168,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0D9FB2472815E6CB009F7D80 /* Build configuration list for PBXProject "DataStructuresAndAlgorithmsInSwift" */;
+			buildConfigurationList = 0D9FB2472815E6CB009F7D80 /* Build configuration list for PBXProject "SwiftDataStructuresAndAlgorithms" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -543,7 +543,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0D9FB2472815E6CB009F7D80 /* Build configuration list for PBXProject "DataStructuresAndAlgorithmsInSwift" */ = {
+		0D9FB2472815E6CB009F7D80 /* Build configuration list for PBXProject "SwiftDataStructuresAndAlgorithms" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0D9FB2482815E6CB009F7D80 /* Debug */,
