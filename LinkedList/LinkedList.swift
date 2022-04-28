@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Linked List Protocol
 public protocol HeadTailLinkedList {
     associatedtype Value
     
@@ -42,9 +43,18 @@ public protocol HeadTailLinkedListInsertable {
     mutating func insert(_ value: Value, after node: LinkedListNode<Value>) -> LinkedListNode<Value>
 }
 
-
 public protocol HeadTailLinkedListRemovable {
+    associatedtype Value
     
+    /// Removes the value at the front of the list.
+    mutating func pop() -> Value?
+    
+    /// Removes the value at the end of the list.
+    @discardableResult
+    mutating func removeLast() -> Value?
+    
+    /// Removes a value anywhere in the list.
+    mutating func remove(after node: LinkedListNode<Value>) -> Value?
 }
 
 // MARK: - HeadTailLinkedList
@@ -62,7 +72,6 @@ extension LinkedList: HeadTailLinkedListInspectable {
     public var isEmpty: Bool {
         return head == nil
     }
-    
     
     public func node(at index: Int) -> LinkedListNode<Value>? {
         var currentNode = head
@@ -111,7 +120,50 @@ extension LinkedList: HeadTailLinkedListInsertable {
 
 // MARK: - HeadTailLinkedListRemovable
 extension LinkedList: HeadTailLinkedListRemovable {
+    public mutating func pop() -> Value? {
+        defer {
+            head = head?.next
+            if isEmpty {
+                tail = nil
+            }
+        }
+        
+        return head?.value
+    }
     
+    @discardableResult
+    public mutating func removeLast() -> Value? {
+        guard let head = head else {
+            return nil
+        }
+        
+        guard head.next != nil else {
+            return pop()
+        }
+        
+        var previous = head
+        var current = head
+        
+        while let next = current.next {
+            previous = current
+            current = next
+        }
+        
+        previous.next = nil
+        tail = previous
+        return current.value
+    }
+    
+    public mutating func remove(after node: LinkedListNode<Value>) -> Value? {
+        defer {
+            if node.next === tail {
+                tail = node
+            }
+            
+            node.next = node.next?.next
+        }
+        return node.next?.value
+    }
 }
 
 extension LinkedList: CustomDebugStringConvertible {
