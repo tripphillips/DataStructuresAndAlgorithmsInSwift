@@ -36,6 +36,9 @@ class LinkedListTests: XCTestCase {
         let sut = LinkedList<Int>()
         
         XCTAssertTrue(sut.isEmpty)
+        XCTAssertNil(sut.head)
+        XCTAssertNil(sut.tail)
+        
     }
     
     func test_isNotEmpty_LinkedList() {
@@ -43,6 +46,8 @@ class LinkedListTests: XCTestCase {
         sut.push(1)
         
         XCTAssertFalse(sut.isEmpty)
+        XCTAssertNotNil(sut.head)
+        XCTAssertNotNil(sut.tail)
     }
     
     func test_push_LinkedListNode() {
@@ -50,7 +55,8 @@ class LinkedListTests: XCTestCase {
         sut.push(1)
         
         print(sut.debugDescription)
-        
+        XCTAssertNotNil(sut.head)
+        XCTAssertNotNil(sut.tail)
         XCTAssertIdentical(sut.head, sut.tail)
     }
     
@@ -74,6 +80,8 @@ class LinkedListTests: XCTestCase {
         print(sut.debugDescription)
         
         XCTAssertIdentical(sut.head, sut.tail)
+        XCTAssertNotNil(sut.head)
+        XCTAssertNotNil(sut.tail)
     }
     
     func test_append_MultipleLinkedListNodes() {
@@ -96,6 +104,8 @@ class LinkedListTests: XCTestCase {
         
         let nodeAtIndex = sut.node(at: 1)
         XCTAssertEqual(nodeAtIndex?.value, 2)
+        XCTAssertNotNil(sut.head)
+        XCTAssertNotNil(sut.tail)
     }
     
     func test_nodeAtIndex_IndexDoesNotExists() {
@@ -105,6 +115,8 @@ class LinkedListTests: XCTestCase {
         
         let nodeAtIndex = sut.node(at: 1)
         XCTAssertEqual(nodeAtIndex?.value, nil)
+        XCTAssertNil(sut.head)
+        XCTAssertNil(sut.tail)
     }
     
     func test_insert_AfterFirstNode() {
@@ -116,6 +128,8 @@ class LinkedListTests: XCTestCase {
         print(sut.debugDescription)
         
         XCTAssertEqual(nodeAtIndex.next?.value, 4)
+        XCTAssertNotNil(sut.head)
+        XCTAssertNotNil(sut.tail)
     }
     
     func test_insert_AfterLastNode() {
@@ -127,6 +141,8 @@ class LinkedListTests: XCTestCase {
         print(sut.debugDescription)
         
         XCTAssertEqual(nodeAtIndex.next?.value, 4)
+        XCTAssertNotNil(sut.head)
+        XCTAssertNotNil(sut.tail)
     }
     
     func test_insert_AfterOutOfBoundsNode() {
@@ -138,6 +154,8 @@ class LinkedListTests: XCTestCase {
         print(sut.debugDescription)
         
         XCTAssertEqual(nodeAtIndex.next?.value, 4)
+        XCTAssertNotNil(sut.head)
+        XCTAssertNotNil(sut.tail)
     }
     
     func test_pop_EmptyLinkedList() {
