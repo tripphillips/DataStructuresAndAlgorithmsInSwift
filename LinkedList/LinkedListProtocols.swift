@@ -26,20 +26,20 @@ public protocol HeadTailLinkedListInspectable {
     /// Finds the node at an index and returns it.
     /// - Parameters:
     ///     - index: The index of the node beginning from 0.
-    /// - Returns: the node at a given index.
+    /// - Returns: The node at a given index.
     func node(at index: Int) -> LinkedListNode<T>?
 }
 
 public protocol HeadTailLinkedListInsertable {
     associatedtype T
     
-    /// adds a value at the front of the list.
+    /// Adds a value at the front of the list.
     mutating func push(_ value: T)
     
-    /// adds a value at the end of the list.
+    /// Adds a value at the end of the list.
     mutating func append(_ value: T)
     
-    /// adds a value after a particular list node.
+    /// Adds a value after a particular list node.
     /// - Parameters:
     ///     - value: The value to insert as a node.
     ///     - after node: the node to insert the new node after.
