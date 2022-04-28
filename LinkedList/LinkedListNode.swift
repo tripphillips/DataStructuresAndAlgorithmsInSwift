@@ -18,8 +18,8 @@ public class LinkedListNode<Value> {
     }
 }
 
-extension Node: CustomDebugStringConvertible {
-    public var description: String {
+extension LinkedListNode: CustomDebugStringConvertible {
+    public var debugDescription: String {
         guard let next = next else {
             return "\(value)"
         }
