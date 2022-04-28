@@ -90,10 +90,7 @@ class LinkedListTests: XCTestCase {
     }
     
     func test_nodeAtIndex_IndexExists() {
-        var sut = LinkedList<Int>()
-        sut.append(1)
-        sut.append(2)
-        sut.append(3)
+        let sut = makeLinkedListWithMultipleValuesAppended()
         
         print(sut.debugDescription)
         
@@ -111,10 +108,7 @@ class LinkedListTests: XCTestCase {
     }
     
     func test_insert_AfterFirstNode() {
-        var sut = LinkedList<Int>()
-        sut.append(1)
-        sut.append(2)
-        sut.append(3)
+        var sut = makeLinkedListWithMultipleValuesAppended()
         
         let nodeAtIndex = sut.node(at: 0)!
         sut.insert(4, after: nodeAtIndex)
@@ -125,12 +119,9 @@ class LinkedListTests: XCTestCase {
     }
     
     func test_insert_AfterLastNode() {
-        var sut = LinkedList<Int>()
-        sut.append(1)
-        sut.append(2)
-        sut.append(3)
-        
+        var sut = makeLinkedListWithMultipleValuesAppended()
         let nodeAtIndex = sut.node(at: 2)!
+        
         sut.insert(4, after: nodeAtIndex)
         
         print(sut.debugDescription)
@@ -139,16 +130,110 @@ class LinkedListTests: XCTestCase {
     }
     
     func test_insert_AfterOutOfBoundsNode() {
-        var sut = LinkedList<Int>()
-        sut.append(1)
-        sut.append(2)
-        sut.append(3)
-        
+        var sut = makeLinkedListWithMultipleValuesAppended()
         let nodeAtIndex = sut.node(at: -1)!
+        
         sut.insert(4, after: nodeAtIndex)
         
         print(sut.debugDescription)
         
         XCTAssertEqual(nodeAtIndex.next?.value, 4)
+    }
+    
+    func test_pop_EmptyLinkedList() {
+        var sut = LinkedList<Int>()
+        
+        print(sut.debugDescription)
+        
+        XCTAssertNil(sut.pop())
+        XCTAssertNil(sut.head)
+        XCTAssertNil(sut.tail)
+    }
+    
+    func test_pop_SingleNodeLinkedList() {
+        var sut = LinkedList<Int>()
+        sut.push(1)
+    
+        print(sut.debugDescription)
+        
+        XCTAssertEqual(sut.pop(), 1)
+        XCTAssertNil(sut.head)
+        XCTAssertNil(sut.tail)
+    }
+    
+    func test_pop_MultipleNodeLinkedList() {
+        var sut = makeLinkedListWithMultipleValuesAppended()
+    
+        print(sut.debugDescription)
+        
+        XCTAssertEqual(sut.pop(), 1)
+        XCTAssertEqual(sut.head?.value, 2)
+        XCTAssertEqual(sut.tail?.value, 3)
+    }
+    
+    func test_removeLast_EmptyLinkedList() {
+        var sut = LinkedList<Int>()
+        
+        print(sut.debugDescription)
+        
+        XCTAssertNil(sut.removeLast())
+        XCTAssertNil(sut.head)
+        XCTAssertNil(sut.tail)
+    }
+    
+    func test_removeLast_SingleNodeLinkedList() {
+        var sut = LinkedList<Int>()
+        sut.push(1)
+    
+        print(sut.debugDescription)
+        
+        XCTAssertEqual(sut.removeLast(), 1)
+        XCTAssertNil(sut.head)
+        XCTAssertNil(sut.tail)
+    }
+    
+    func test_removeLast_MultipleNodeLinkedList() {
+        var sut = makeLinkedListWithMultipleValuesAppended()
+    
+        print(sut.debugDescription)
+        
+        XCTAssertEqual(sut.removeLast(), 3)
+        XCTAssertEqual(sut.head?.value, 1)
+        XCTAssertEqual(sut.tail?.value, 2)
+    }
+    
+    func test_removeAfter_SingleNodeLinkedList() {
+        var sut = LinkedList<Int>()
+        sut.push(1)
+        
+        let nodeAtIndex = sut.node(at: 0)!
+        
+        print(sut.debugDescription)
+        
+        XCTAssertNil(sut.remove(after: nodeAtIndex))
+        XCTAssertEqual(sut.head?.value, 1)
+        XCTAssertEqual(sut.tail?.value, 1)
+    }
+    
+    func test_removeAfter_MultipleNodeLinkedList() {
+        var sut = makeLinkedListWithMultipleValuesAppended()
+    
+        let nodeAtIndex = sut.node(at: 0)!
+        
+        print(sut.debugDescription)
+        
+        XCTAssertEqual(sut.remove(after: nodeAtIndex), 2)
+        XCTAssertEqual(sut.head?.value, 1)
+        XCTAssertEqual(sut.tail?.value, 3)
+    }
+    
+    // MARK: - Helper Methods
+    
+    func makeLinkedListWithMultipleValuesAppended() -> LinkedList<Int> {
+        var linkedList = LinkedList<Int>()
+        linkedList.append(1)
+        linkedList.append(2)
+        linkedList.append(3)
+        return linkedList
     }
 }
