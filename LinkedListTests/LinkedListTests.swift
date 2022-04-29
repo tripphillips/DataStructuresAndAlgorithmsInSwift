@@ -245,6 +245,61 @@ class LinkedListTests: XCTestCase {
         XCTAssertEqual(sut.tail?.value, 3)
     }
     
+    func test_iterateThrough_LinkedList() {
+        let sut = makeLinkedListWithMultipleValuesAppended()
+        
+        var resultArr = [Int]()
+        
+        for element in sut {
+            resultArr.append(element)
+        }
+        
+        XCTAssertEqual(resultArr, [1,2,3])
+    }
+    
+    func test_subscriptStartIndex_LinkedList() {
+        let sut = makeLinkedListWithMultipleValuesAppended()
+        
+        let result = sut[sut.startIndex]
+        
+        XCTAssertEqual(result, 1)
+    }
+    
+    func test_subscriptEndIndex_LinkedList() {
+        let sut = makeLinkedListWithMultipleValuesAppended()
+        
+        var resultArr = [Int]()
+        
+        for i in 0..<sut.count {
+            resultArr.append(i + 1)
+        }
+        
+        XCTAssertEqual(resultArr, [1,2,3])
+    }
+
+    
+    func test_equalityIndex_LinkedList() {
+        let sut = makeLinkedListWithMultipleValuesAppended()
+        
+        XCTAssertFalse(sut.startIndex == sut.endIndex)
+    }
+    
+    func test_compareIndex_LinkedList() {
+        let sut = makeLinkedListWithMultipleValuesAppended()
+        
+        XCTAssertFalse(sut.startIndex > sut.endIndex)
+        XCTAssertFalse(sut.startIndex > sut.startIndex)
+    }
+    
+    func test_reduceHigherOrderFunction_LinkedList() {
+        
+        let sut = makeLinkedListWithMultipleValuesAppended()
+        
+        let result = sut.reduce(0, +)
+        
+        XCTAssertEqual(result, 6)
+    }
+    
     // MARK: - Helper Methods
     
     func makeLinkedListWithMultipleValuesAppended() -> LinkedList<Int> {

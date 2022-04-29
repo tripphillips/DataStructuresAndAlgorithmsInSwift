@@ -157,7 +157,7 @@ extension LinkedList: Collection {
     }
 
     public var endIndex: Index {
-        Index(node: tail)
+        Index(node: tail?.next)
     }
     
     public func index(after i: Index) -> Index {
