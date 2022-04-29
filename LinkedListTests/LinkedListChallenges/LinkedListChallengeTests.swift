@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import LinkedList
 
 class LinkedListChallengeTests: XCTestCase {
     
@@ -29,43 +30,35 @@ class LinkedListChallengeTests: XCTestCase {
     // MARK: - Challenge 2 Find Middle Node
     func test_findMiddleNode_linkedListOddNodes() {
         
-        let sut = LinkedListChallenge_2_MiddleNode(LinkedListChallengeTests.integerArray)
+        let sut = makeLinkedListWithMultipleValuesAppended1()
         
-        let middleNode = sut.findMiddleNode()
-        XCTAssertEqual(middleNode?.value, 3)
+        let middleNode = sut.middleNode
+        XCTAssertEqual(middleNode?.value, 4)
     }
     
     
     func test_findMiddleNode_linkedListEvenNodes() {
         
-        let sut = LinkedListChallenge_2_MiddleNode(LinkedListChallengeTests.integerArray2)
+        let sut =  makeLinkedListWithMultipleValuesAppended2()
         
-        let middleNode = sut.findMiddleNode()
+        let middleNode = sut.middleNode
         XCTAssertEqual(middleNode?.value, 3)
-    }
-    
-    func test_findMiddleNode_linkedListEvenManyNodes() {
-        
-        let sut = LinkedListChallenge_2_MiddleNode(LinkedListChallengeTests.integerArray3)
-        
-        let middleNode = sut.findMiddleNode()
-        XCTAssertEqual(middleNode?.value, 5)
     }
     
     // MARK: - Challenge 3 Reverse Linked List
     func test_reverse_LinkedList() {
-        let sut = LinkedListChallenge_3_ReverseLinkedList(LinkedListChallengeTests.integerArray)
+        var sut = makeLinkedListWithMultipleValuesAppended1()
         
-        let reversed = sut.reverseLinkedList()
+        sut.reverse()
         
         var result = [Int]()
-        var currentNode = reversed!.head
+        var currentNode = sut.head
         while currentNode != nil {
             result.append(currentNode!.value)
             currentNode = currentNode?.next
         }
         
-        XCTAssertEqual(result, LinkedListChallengeTests.reversedIntegerArray)
+        XCTAssertEqual(result, LinkedListChallengeTests.integerArray4.reversed())
     }
     
     // MARK: - Challenge 4 Merge Two Lists
@@ -115,12 +108,12 @@ class LinkedListChallengeTests: XCTestCase {
     }
     
     func test_remove_LinkList() {
-        let sut = LinkedListChallenge_5_RemoveAllOccurences([1,2,3,4,5,5,5])
+        var sut = makeLinkedListWithMultipleValuesAppended1()
         
         sut.removeAll(5)
         
         var result = [Int]()
-        var currentNode = sut.linkedList.head
+        var currentNode = sut.head
         while currentNode != nil {
             result.append(currentNode!.value)
             currentNode = currentNode?.next
@@ -133,5 +126,27 @@ class LinkedListChallengeTests: XCTestCase {
     static let integerArray: [Int] = [1,2,3,4,5]
     static let integerArray2: [Int] = [1,2,3,4]
     static let integerArray3: [Int] = [1,2,3,4,5,6,7,8,9]
+    static let integerArray4: [Int] = [1,2,3,4,5,6,7]
     static let reversedIntegerArray: [Int] = integerArray.reversed()
+
+    func makeLinkedListWithMultipleValuesAppended1() -> LinkedList<Int> {
+        var linkedList = LinkedList<Int>()
+        linkedList.append(1)
+        linkedList.append(2)
+        linkedList.append(3)
+        linkedList.append(4)
+        linkedList.append(5)
+        linkedList.append(6)
+        linkedList.append(7)
+        return linkedList
+    }
+    
+    func makeLinkedListWithMultipleValuesAppended2() -> LinkedList<Int> {
+        var linkedList = LinkedList<Int>()
+        linkedList.append(1)
+        linkedList.append(2)
+        linkedList.append(3)
+        linkedList.append(4)
+        return linkedList
+    }
 }

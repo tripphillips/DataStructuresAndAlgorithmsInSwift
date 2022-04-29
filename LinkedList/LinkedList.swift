@@ -36,7 +36,7 @@ extension LinkedList: HeadTailLinkedListInspectable {
     }
     
     // Allow for copy-on-write making a new copy of all nodes before mutating the linked list.
-    private mutating func copyNodes() {
+    public mutating func copyNodes() {
         guard !isKnownUniquelyReferenced(&head) else {
           return
         }
@@ -57,7 +57,7 @@ extension LinkedList: HeadTailLinkedListInspectable {
         tail = newNode
     }
     
-    private mutating func copyNodes(returningCopyOf node: LinkedListNode<T>?) -> LinkedListNode<T>? {
+    public mutating func copyNodes(returningCopyOf node: LinkedListNode<T>?) -> LinkedListNode<T>? {
         guard !isKnownUniquelyReferenced(&head) else {
           return nil
         }

@@ -52,12 +52,12 @@ class LinkedListChallenge_1_Reverse<T: Comparable>: LinkedListChallenge<T> {
     }
 }
 
-class LinkedListChallenge_2_MiddleNode<T: Comparable>: LinkedListChallenge<T> {
+
+extension LinkedList {
     
-    func findMiddleNode() -> LinkedListNode<T>? {
-        
-        var slow = linkedList.head
-        var fast = linkedList.head
+    var middleNode: LinkedListNode<T>? {
+        var slow = head
+        var fast = head
         
         while let nextFast = fast?.next {
             fast = nextFast.next
@@ -66,16 +66,13 @@ class LinkedListChallenge_2_MiddleNode<T: Comparable>: LinkedListChallenge<T> {
         
         return slow
     }
-}
-
-class LinkedListChallenge_3_ReverseLinkedList<T: Comparable>: LinkedListChallenge<T> {
     
-    func reverseLinkedList() -> LinkedList<T>? {
+    @discardableResult
+    mutating func reverse() {
+        copyNodes()
         
-        var linkedList = linkedList
-        
-        var previous = linkedList.head
-        var current = linkedList.head?.next
+        var previous = head
+        var current = head?.next
         previous?.next = nil
         
         while current != nil {
@@ -85,9 +82,32 @@ class LinkedListChallenge_3_ReverseLinkedList<T: Comparable>: LinkedListChalleng
             current = next
         }
         
-        linkedList.head = linkedList.tail
+        head = tail
+    }
+    
+    mutating func removeAll(_ value: T) {
+        copyNodes()
         
-        return linkedList
+        while let head = head,
+              head.value == value {
+            self.head = self.head?.next
+        }
+        
+        var previous = head
+        var current = head?.next
+        
+        while let currentNode = current {
+            guard currentNode.value != value else {
+                previous?.next = currentNode.next
+                current = previous?.next
+                continue
+            }
+            
+            previous = current
+            current = current?.next
+        }
+        
+        tail = previous
     }
 }
 
@@ -178,33 +198,5 @@ class LinkedListChallenge_4_MergeLinkedLists<T: Comparable>  {
         }()
         
         return linkedList
-    }
-}
-
-class LinkedListChallenge_5_RemoveAllOccurences<T: Comparable>: LinkedListChallenge<T> {
-    
-    func removeAll(_ value: T) {
-        
-        while let head = linkedList.head,
-              head.value == value {
-            linkedList.head = linkedList.head?.next
-        }
-        
-        var previous = linkedList.head
-        var current = linkedList.head?.next
-        
-        while let currentNode = current {
-            guard currentNode.value != value else {
-                previous?.next = currentNode.next
-                current = previous?.next
-                continue
-            }
-            
-            previous = current
-            current = current?.next
-        }
-        
-        linkedList.tail = previous
-        
     }
 }
