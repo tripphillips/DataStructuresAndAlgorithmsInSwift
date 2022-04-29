@@ -21,6 +21,7 @@
 		0DB3756F281AF16100C4B1A0 /* LinkedListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3756E281AF16100C4B1A0 /* LinkedListProtocols.swift */; };
 		0DB37572281C19A200C4B1A0 /* LinkedListChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB37571281C19A200C4B1A0 /* LinkedListChallenges.swift */; };
 		0DB37574281C19AF00C4B1A0 /* LinkedListChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB37573281C19AF00C4B1A0 /* LinkedListChallengeTests.swift */; };
+		0DB37578281C433000C4B1A0 /* Stack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9FB24F2815E72B009F7D80 /* Stack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB37578281C433000C4B1A0 /* Stack.framework in Frameworks */,
 				0DB3755D281A413B00C4B1A0 /* LinkedList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +112,7 @@
 				0DB37556281A413B00C4B1A0 /* LinkedList */,
 				0DB37560281A413B00C4B1A0 /* LinkedListTests */,
 				0D9FB2502815E72B009F7D80 /* Products */,
+				0DB37577281C433000C4B1A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +172,13 @@
 				0DB37573281C19AF00C4B1A0 /* LinkedListChallengeTests.swift */,
 			);
 			path = LinkedListChallenges;
+			sourceTree = "<group>";
+		};
+		0DB37577281C433000C4B1A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

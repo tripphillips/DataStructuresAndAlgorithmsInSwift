@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - HeadTailLinkedList
-public struct LinkedList<T>: HeadTailLinkedList {
+public struct LinkedList<T: Comparable> : HeadTailLinkedList {
     
     public var head: LinkedListNode<T>?
     public var tail: LinkedListNode<T>?

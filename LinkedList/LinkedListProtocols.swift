@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol HeadTailLinkedList {
-    associatedtype T
+    associatedtype T: Comparable
     
     /// The first node in the linked list.
     var head: LinkedListNode<T>? { get set }
@@ -18,7 +18,7 @@ public protocol HeadTailLinkedList {
 }
 
 public protocol HeadTailLinkedListInspectable {
-    associatedtype T
+    associatedtype T: Comparable
     
     /// Returns true if the linked list is empty.
     var isEmpty: Bool { get }
@@ -31,7 +31,7 @@ public protocol HeadTailLinkedListInspectable {
 }
 
 public protocol HeadTailLinkedListInsertable {
-    associatedtype T
+    associatedtype T: Comparable
     
     /// Adds a value at the front of the list.
     mutating func push(_ value: T)
@@ -49,7 +49,7 @@ public protocol HeadTailLinkedListInsertable {
 }
 
 public protocol HeadTailLinkedListRemovable {
-    associatedtype T
+    associatedtype T: Comparable
     
     /// Removes the value at the front of the list.
     /// - Returns: The value that was removed.

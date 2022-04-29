@@ -7,12 +7,12 @@
 
 import Foundation
 
-public class LinkedListNode<Value> {
+public class LinkedListNode<T: Comparable> {
     
-    public var value: Value
+    public var value: T
     public var next: LinkedListNode?
     
-    public init(value: Value, next: LinkedListNode? = nil) {
+    public init(value: T, next: LinkedListNode? = nil) {
         self.value = value
         self.next = next
     }
