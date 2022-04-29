@@ -37,21 +37,50 @@ extension LinkedList: HeadTailLinkedListInspectable {
     
     // Allow for copy-on-write making a new copy of all nodes before mutating the linked list.
     private mutating func copyNodes() {
+        guard !isKnownUniquelyReferenced(&head) else {
+          return
+        }
+        
         guard var oldNode = head else {
             return
         }
         
-        head = LinkedListNode(value: oldNode.value, next: nil)
+        head = LinkedListNode(value: oldNode.value)
         var newNode = head
         
         while let nextOldNode = oldNode.next {
-            newNode!.next = LinkedListNode(value: nextOldNode.value, next: nil)
+            newNode!.next = LinkedListNode(value: nextOldNode.value)
             newNode = newNode!.next
-            
             oldNode = nextOldNode
         }
         
         tail = newNode
+    }
+    
+    private mutating func copyNodes(returningCopyOf node: LinkedListNode<T>?) -> LinkedListNode<T>? {
+        guard !isKnownUniquelyReferenced(&head) else {
+          return nil
+        }
+        
+        guard var oldNode = head else {
+            return nil
+        }
+        
+        head = LinkedListNode(value: oldNode.value)
+        var newNode = head
+        var nodeCopy: LinkedListNode<T>?
+        
+        while let nextOldNode = oldNode.next {
+            if oldNode === node {
+                nodeCopy = newNode
+            }
+            
+            newNode!.next = LinkedListNode(value: nextOldNode.value)
+            newNode = newNode!.next
+            oldNode = nextOldNode
+        }
+        
+        return nodeCopy
     }
 }
 
@@ -74,7 +103,7 @@ extension LinkedList: HeadTailLinkedListInsertable {
             push(value)
             return
         }
-        tail!.next = LinkedListNode(value: value, next: nil)
+        tail!.next = LinkedListNode(value: value)
         tail = tail!.next
     }
     
@@ -133,7 +162,7 @@ extension LinkedList: HeadTailLinkedListRemovable {
     }
     
     public mutating func remove(after node: LinkedListNode<T>) -> T? {
-        copyNodes()
+        guard let node = copyNodes(returningCopyOf: node) else { return nil }
         
         defer {
             if node.next === tail {

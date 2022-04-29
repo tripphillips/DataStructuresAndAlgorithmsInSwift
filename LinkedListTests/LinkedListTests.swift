@@ -13,7 +13,7 @@ class LinkedListTests: XCTestCase {
 
     func test_initialize_LinkedListNode() {
         
-        let sut = LinkedListNode(value: 1, next: nil)
+        let sut = LinkedListNode(value: 1)
         
         print(sut.debugDescription)
         
@@ -23,7 +23,7 @@ class LinkedListTests: XCTestCase {
     
     func test_initialize_LinkedListNodeWithNext() {
         
-        let next = LinkedListNode(value: 2, next: nil)
+        let next = LinkedListNode(value: 2)
         let sut = LinkedListNode(value: 1, next: next)
         
         print(sut.debugDescription)
@@ -135,6 +135,19 @@ class LinkedListTests: XCTestCase {
     func test_insert_AfterLastNode() {
         var sut = makeLinkedListWithMultipleValuesAppended()
         let nodeAtIndex = sut.node(at: 2)!
+        
+        sut.insert(4, after: nodeAtIndex)
+        
+        print(sut.debugDescription)
+        
+        XCTAssertEqual(nodeAtIndex.next?.value, 4)
+        XCTAssertNotNil(sut.head)
+        XCTAssertNotNil(sut.tail)
+    }
+    
+    func test_insert_AtLastNode() {
+        var sut = makeLinkedListWithMultipleValuesAppended()
+        let nodeAtIndex = sut.node(at: 1)!
         
         sut.insert(4, after: nodeAtIndex)
         
@@ -298,6 +311,79 @@ class LinkedListTests: XCTestCase {
         let result = sut.reduce(0, +)
         
         XCTAssertEqual(result, 6)
+    }
+    
+    func test_push_doesLinkedListHaveValueSemantics() {
+        
+        var sut1 = makeLinkedListWithMultipleValuesAppended()
+        var sut2 = sut1
+        
+        sut2.push(4)
+        
+        XCTAssertEqual(sut1.pop(), 1)
+        XCTAssertEqual(sut2.pop(), 4)
+    }
+    
+    func test_append_doesLinkedListHaveValueSemantics() {
+        
+        var sut1 = makeLinkedListWithMultipleValuesAppended()
+        var sut2 = sut1
+        
+        sut2.append(4)
+        
+        XCTAssertEqual(sut1.removeLast(), 3)
+        XCTAssertEqual(sut2.removeLast(), 4)
+    }
+    
+    // TODO: Not sure why this doesnt work
+//    func test_insertAfter_doesLinkedListHaveValueSemantics() {
+//
+//        var sut1 = makeLinkedListWithMultipleValuesAppended()
+//        var sut2 = sut1
+//
+//        let nodeAtIndex = sut2.node(at: 2)!
+//        sut1.insert(0, after: nodeAtIndex)
+//
+//        XCTAssertEqual(sut1.tail?.value, 0)
+//        XCTAssertEqual(sut2.tail?.value, 3)
+//
+//        print("SUT")
+//        print(sut1.debugDescription)
+//        print(sut2.debugDescription)
+//    }
+    
+    func test_pop_doesLinkedListHaveValueSemantics() {
+        
+        let sut1 = makeLinkedListWithMultipleValuesAppended()
+        var sut2 = sut1
+        
+        _ = sut2.pop()
+        
+        XCTAssertEqual(sut1.head?.value, 1)
+        XCTAssertEqual(sut2.head?.value, 2)
+    }
+    
+    func test_removeLast_doesLinkedListHaveValueSemantics() {
+        
+        let sut1 = makeLinkedListWithMultipleValuesAppended()
+        var sut2 = sut1
+        
+        sut2.removeLast()
+        
+        XCTAssertEqual(sut1.tail?.value, 3)
+        XCTAssertEqual(sut2.tail?.value, 2)
+    }
+    
+    func test_removeAfter_doesLinkedListHaveValueSemantics() {
+        
+        let sut1 = makeLinkedListWithMultipleValuesAppended()
+        var sut2 = sut1
+        
+        let nodeAtIndex = sut2.node(at: 0)!
+        _ = sut2.remove(after: nodeAtIndex)
+        
+        XCTAssertEqual(sut1.head?.next?.value, 2)
+        XCTAssertEqual(sut2.head?.next?.value, 3)
     }
     
     // MARK: - Helper Methods

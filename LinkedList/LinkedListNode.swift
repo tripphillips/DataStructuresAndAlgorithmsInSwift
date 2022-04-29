@@ -12,7 +12,7 @@ public class LinkedListNode<Value> {
     public var value: Value
     public var next: LinkedListNode?
     
-    public init(value: Value, next: LinkedListNode?) {
+    public init(value: Value, next: LinkedListNode? = nil) {
         self.value = value
         self.next = next
     }
