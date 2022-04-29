@@ -67,7 +67,6 @@ extension LinkedList {
         return slow
     }
     
-    @discardableResult
     mutating func reverse() {
         copyNodes()
         
