@@ -165,12 +165,12 @@ extension LinkedList: HeadTailLinkedListRemovable {
         guard let node = copyNodes(returningCopyOf: node) else { return nil }
         
         defer {
-            if node.next === tail {
+            if tail === node.next {
                 tail = node
             }
-            
             node.next = node.next?.next
         }
+        
         return node.next?.value
     }
 }
