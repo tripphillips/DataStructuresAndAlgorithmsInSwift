@@ -113,31 +113,4 @@ class StackTests: XCTestCase {
         
         XCTAssertFalse(sut.isEmpty())
     }
-    
-    func test_iterable_iteratesThroughEmptyStack() {
-        let sut = Stack<Int>()
-        
-        let expected = [Int]()
-        var result = [Int]()
-        
-        for elem in sut {
-            result.append(elem)
-        }
-        
-        XCTAssertEqual(result, expected)
-    }
-    
-    func test_iterable_iteratesThroughFilledStack() {
-        let sut: Stack<Int> = [1,2,3,4,5]
-        
-        let expected = [5,4,3,2,1]
-        var result = [Int]()
-        
-        for elem in sut {
-            result.append(elem)
-        }
-        
-        XCTAssertEqual(result, expected)
-    }
-
 }

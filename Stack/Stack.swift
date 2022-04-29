@@ -59,24 +59,6 @@ extension Stack: ExpressibleByArrayLiteral {
     }
 }
 
-public struct StackIterator<Element>: IteratorProtocol {
-    private var storage = [Element]()
-    
-    init(_ storage: [Element]) {
-        self.storage = storage
-    }
-    
-    public mutating func next() -> Element? {
-        return storage.popLast()
-    }
-}
-
-extension Stack: Sequence {
-    public func makeIterator() -> StackIterator<Element> {
-        return StackIterator(storage)
-    }
-}
-
 extension Stack: CustomDebugStringConvertible {
     
     public var debugDescription: String {
