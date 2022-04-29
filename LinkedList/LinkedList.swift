@@ -175,6 +175,7 @@ extension LinkedList: HeadTailLinkedListRemovable {
     }
 }
 
+// MARK: - CustomDebugStringConvertible
 extension LinkedList: CustomDebugStringConvertible {
 
   public var debugDescription: String {
@@ -185,6 +186,7 @@ extension LinkedList: CustomDebugStringConvertible {
   }
 }
 
+// MARK: - Collection
 extension LinkedList: Collection {
 
     public struct Index: Comparable {
