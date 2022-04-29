@@ -34,12 +34,33 @@ extension LinkedList: HeadTailLinkedListInspectable {
         
         return currentNode
     }
+    
+    // Allow for copy-on-write making a new copy of all nodes before mutating the linked list.
+    private mutating func copyNodes() {
+        guard var oldNode = head else {
+            return
+        }
+        
+        head = LinkedListNode(value: oldNode.value, next: nil)
+        var newNode = head
+        
+        while let nextOldNode = oldNode.next {
+            newNode!.next = LinkedListNode(value: nextOldNode.value, next: nil)
+            newNode = newNode!.next
+            
+            oldNode = nextOldNode
+        }
+        
+        tail = newNode
+    }
 }
 
 // MARK: - HeadTailLinkedListInsertable
 extension LinkedList: HeadTailLinkedListInsertable {
     
     public mutating func push(_ value: T) {
+        copyNodes()
+        
         head = LinkedListNode(value: value, next: head)
         if tail == nil {
             tail = head
@@ -47,6 +68,8 @@ extension LinkedList: HeadTailLinkedListInsertable {
     }
     
     public mutating func append(_ value: T) {
+        copyNodes()
+        
         guard !isEmpty else {
             push(value)
             return
@@ -58,6 +81,8 @@ extension LinkedList: HeadTailLinkedListInsertable {
     @discardableResult
     public mutating func insert(_ value: T,
                                 after node: LinkedListNode<T>) -> LinkedListNode<T> {
+        copyNodes()
+        
         guard tail !== node else {
             append(value)
             return tail!
@@ -71,6 +96,8 @@ extension LinkedList: HeadTailLinkedListInsertable {
 // MARK: - HeadTailLinkedListRemovable
 extension LinkedList: HeadTailLinkedListRemovable {
     public mutating func pop() -> T? {
+        copyNodes()
+        
         defer {
             head = head?.next
             if isEmpty {
@@ -82,6 +109,8 @@ extension LinkedList: HeadTailLinkedListRemovable {
     
     @discardableResult
     public mutating func removeLast() -> T? {
+        copyNodes()
+        
         guard let head = head else {
             return nil
         }
@@ -104,6 +133,8 @@ extension LinkedList: HeadTailLinkedListRemovable {
     }
     
     public mutating func remove(after node: LinkedListNode<T>) -> T? {
+        copyNodes()
+        
         defer {
             if node.next === tail {
                 tail = node
