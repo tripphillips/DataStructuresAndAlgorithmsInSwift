@@ -20,7 +20,7 @@ public struct LinkedList<T>: HeadTailLinkedList {
 extension LinkedList: HeadTailLinkedListInspectable {
     
     public var isEmpty: Bool {
-        return head == nil
+        head == nil
     }
     
     public func node(at index: Int) -> LinkedListNode<T>? {
