@@ -19,6 +19,8 @@
 		0DB3756B281A41B800C4B1A0 /* LinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3756A281A41B800C4B1A0 /* LinkedListNode.swift */; };
 		0DB3756D281A440100C4B1A0 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3756C281A440100C4B1A0 /* LinkedList.swift */; };
 		0DB3756F281AF16100C4B1A0 /* LinkedListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3756E281AF16100C4B1A0 /* LinkedListProtocols.swift */; };
+		0DB37572281C19A200C4B1A0 /* LinkedListChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB37571281C19A200C4B1A0 /* LinkedListChallenges.swift */; };
+		0DB37574281C19AF00C4B1A0 /* LinkedListChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB37573281C19AF00C4B1A0 /* LinkedListChallengeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		0DB3756A281A41B800C4B1A0 /* LinkedListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListNode.swift; sourceTree = "<group>"; };
 		0DB3756C281A440100C4B1A0 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		0DB3756E281AF16100C4B1A0 /* LinkedListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListProtocols.swift; sourceTree = "<group>"; };
+		0DB37571281C19A200C4B1A0 /* LinkedListChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListChallenges.swift; sourceTree = "<group>"; };
+		0DB37573281C19AF00C4B1A0 /* LinkedListChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListChallengeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,8 +157,18 @@
 			isa = PBXGroup;
 			children = (
 				0DB37561281A413B00C4B1A0 /* LinkedListTests.swift */,
+				0DB37570281C199200C4B1A0 /* LinkedListChallenges */,
 			);
 			path = LinkedListTests;
+			sourceTree = "<group>";
+		};
+		0DB37570281C199200C4B1A0 /* LinkedListChallenges */ = {
+			isa = PBXGroup;
+			children = (
+				0DB37571281C19A200C4B1A0 /* LinkedListChallenges.swift */,
+				0DB37573281C19AF00C4B1A0 /* LinkedListChallengeTests.swift */,
+			);
+			path = LinkedListChallenges;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +376,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB37572281C19A200C4B1A0 /* LinkedListChallenges.swift in Sources */,
+				0DB37574281C19AF00C4B1A0 /* LinkedListChallengeTests.swift in Sources */,
 				0DB37562281A413B00C4B1A0 /* LinkedListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
