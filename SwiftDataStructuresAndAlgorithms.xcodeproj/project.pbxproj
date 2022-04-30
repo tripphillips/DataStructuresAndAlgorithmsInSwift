@@ -25,6 +25,11 @@
 		0DB375A7281C57FA00C4B1A0 /* Queue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB3759F281C57FA00C4B1A0 /* Queue.framework */; };
 		0DB375B6281C581600C4B1A0 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375B5281C581600C4B1A0 /* QueueTests.swift */; };
 		0DB375B8281C582200C4B1A0 /* Queue.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB375B7281C582200C4B1A0 /* Queue.h */; };
+		0DB375BA281DE73E00C4B1A0 /* QueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375B9281DE73E00C4B1A0 /* QueueProtocol.swift */; };
+		0DB375BC281DEA4900C4B1A0 /* QueueArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375BB281DEA4900C4B1A0 /* QueueArray.swift */; };
+		0DB375BF281DEF2600C4B1A0 /* DoublyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375BE281DEF2600C4B1A0 /* DoublyLinkedList.swift */; };
+		0DB375C1281DEF7800C4B1A0 /* DoublyLinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375C0281DEF7800C4B1A0 /* DoublyLinkedListNode.swift */; };
+		0DB375C3281DF22300C4B1A0 /* QueueLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375C2281DF22300C4B1A0 /* QueueLinkedList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,11 @@
 		0DB375A6281C57FA00C4B1A0 /* QueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB375B5281C581600C4B1A0 /* QueueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 		0DB375B7281C582200C4B1A0 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		0DB375B9281DE73E00C4B1A0 /* QueueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueProtocol.swift; sourceTree = "<group>"; };
+		0DB375BB281DEA4900C4B1A0 /* QueueArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueArray.swift; sourceTree = "<group>"; };
+		0DB375BE281DEF2600C4B1A0 /* DoublyLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublyLinkedList.swift; sourceTree = "<group>"; };
+		0DB375C0281DEF7800C4B1A0 /* DoublyLinkedListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublyLinkedListNode.swift; sourceTree = "<group>"; };
+		0DB375C2281DF22300C4B1A0 /* QueueLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueLinkedList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +228,10 @@
 			isa = PBXGroup;
 			children = (
 				0DB375B7281C582200C4B1A0 /* Queue.h */,
+				0DB375B9281DE73E00C4B1A0 /* QueueProtocol.swift */,
+				0DB375BB281DEA4900C4B1A0 /* QueueArray.swift */,
+				0DB375C2281DF22300C4B1A0 /* QueueLinkedList.swift */,
+				0DB375BD281DEF1600C4B1A0 /* DoublyLinkedList */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -228,6 +242,15 @@
 				0DB375B5281C581600C4B1A0 /* QueueTests.swift */,
 			);
 			path = QueueTests;
+			sourceTree = "<group>";
+		};
+		0DB375BD281DEF1600C4B1A0 /* DoublyLinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				0DB375BE281DEF2600C4B1A0 /* DoublyLinkedList.swift */,
+				0DB375C0281DEF7800C4B1A0 /* DoublyLinkedListNode.swift */,
+			);
+			path = DoublyLinkedList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +417,7 @@
 					};
 					0DB3759E281C57FA00C4B1A0 = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 					};
 					0DB375A5281C57FA00C4B1A0 = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -511,6 +535,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB375BA281DE73E00C4B1A0 /* QueueProtocol.swift in Sources */,
+				0DB375C1281DEF7800C4B1A0 /* DoublyLinkedListNode.swift in Sources */,
+				0DB375BF281DEF2600C4B1A0 /* DoublyLinkedList.swift in Sources */,
+				0DB375C3281DF22300C4B1A0 /* QueueLinkedList.swift in Sources */,
+				0DB375BC281DEA4900C4B1A0 /* QueueArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1307,6 +1336,7 @@
 		0DB375B2281C57FA00C4B1A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1376,6 +1406,7 @@
 		0DB375B3281C57FA00C4B1A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
