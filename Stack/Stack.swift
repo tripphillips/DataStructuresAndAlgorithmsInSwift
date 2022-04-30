@@ -59,9 +59,9 @@ extension Stack: ExpressibleByArrayLiteral {
     }
 }
 
-extension Stack: CustomDebugStringConvertible {
+extension Stack: CustomStringConvertible {
     
-    public var debugDescription: String {
+    public var description: String {
             """
             ----top----
             \(storage.map { "\($0)" }.reversed().joined(separator: "\n"))

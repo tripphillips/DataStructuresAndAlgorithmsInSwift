@@ -176,9 +176,9 @@ extension LinkedList: HeadTailLinkedListRemovable {
 }
 
 // MARK: - CustomDebugStringConvertible
-extension LinkedList: CustomDebugStringConvertible {
+extension LinkedList: CustomStringConvertible {
 
-  public var debugDescription: String {
+  public var description: String {
     guard let head = head else {
       return "Empty list"
     }
