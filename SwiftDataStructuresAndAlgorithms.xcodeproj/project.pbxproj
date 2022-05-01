@@ -30,6 +30,9 @@
 		0DB375BF281DEF2600C4B1A0 /* DoublyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375BE281DEF2600C4B1A0 /* DoublyLinkedList.swift */; };
 		0DB375C1281DEF7800C4B1A0 /* DoublyLinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375C0281DEF7800C4B1A0 /* DoublyLinkedListNode.swift */; };
 		0DB375C3281DF22300C4B1A0 /* QueueLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375C2281DF22300C4B1A0 /* QueueLinkedList.swift */; };
+		0DB375C6281EE62200C4B1A0 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375C5281EE62200C4B1A0 /* RingBuffer.swift */; };
+		0DB375C8281EE71E00C4B1A0 /* QueueRingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375C7281EE71E00C4B1A0 /* QueueRingBuffer.swift */; };
+		0DB375CA281EEC4100C4B1A0 /* QueueDoubleStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375C9281EEC4100C4B1A0 /* QueueDoubleStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,9 @@
 		0DB375BE281DEF2600C4B1A0 /* DoublyLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublyLinkedList.swift; sourceTree = "<group>"; };
 		0DB375C0281DEF7800C4B1A0 /* DoublyLinkedListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublyLinkedListNode.swift; sourceTree = "<group>"; };
 		0DB375C2281DF22300C4B1A0 /* QueueLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueLinkedList.swift; sourceTree = "<group>"; };
+		0DB375C5281EE62200C4B1A0 /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
+		0DB375C7281EE71E00C4B1A0 /* QueueRingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueRingBuffer.swift; sourceTree = "<group>"; };
+		0DB375C9281EEC4100C4B1A0 /* QueueDoubleStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueDoubleStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,7 +237,9 @@
 				0DB375B9281DE73E00C4B1A0 /* QueueProtocol.swift */,
 				0DB375BB281DEA4900C4B1A0 /* QueueArray.swift */,
 				0DB375C2281DF22300C4B1A0 /* QueueLinkedList.swift */,
-				0DB375BD281DEF1600C4B1A0 /* DoublyLinkedList */,
+				0DB375C7281EE71E00C4B1A0 /* QueueRingBuffer.swift */,
+				0DB375C9281EEC4100C4B1A0 /* QueueDoubleStack.swift */,
+				0DB375C4281EE5F200C4B1A0 /* Queue Storage Data Structures */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -251,6 +259,15 @@
 				0DB375C0281DEF7800C4B1A0 /* DoublyLinkedListNode.swift */,
 			);
 			path = DoublyLinkedList;
+			sourceTree = "<group>";
+		};
+		0DB375C4281EE5F200C4B1A0 /* Queue Storage Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				0DB375BD281DEF1600C4B1A0 /* DoublyLinkedList */,
+				0DB375C5281EE62200C4B1A0 /* RingBuffer.swift */,
+			);
+			path = "Queue Storage Data Structures";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,9 +554,12 @@
 			files = (
 				0DB375BA281DE73E00C4B1A0 /* QueueProtocol.swift in Sources */,
 				0DB375C1281DEF7800C4B1A0 /* DoublyLinkedListNode.swift in Sources */,
+				0DB375C8281EE71E00C4B1A0 /* QueueRingBuffer.swift in Sources */,
 				0DB375BF281DEF2600C4B1A0 /* DoublyLinkedList.swift in Sources */,
 				0DB375C3281DF22300C4B1A0 /* QueueLinkedList.swift in Sources */,
 				0DB375BC281DEA4900C4B1A0 /* QueueArray.swift in Sources */,
+				0DB375C6281EE62200C4B1A0 /* RingBuffer.swift in Sources */,
+				0DB375CA281EEC4100C4B1A0 /* QueueDoubleStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

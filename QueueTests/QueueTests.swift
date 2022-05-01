@@ -69,4 +69,63 @@ class QueueTests: XCTestCase {
         XCTAssertFalse(sut.isEmpty)
     }
 
+    func tests_enqueue_QueueRingBuffer() {
+        var sut = QueueRingBuffer<Int>(count: 5)
+        
+        XCTAssertTrue(sut.enqueue(1))
+        XCTAssertTrue(sut.enqueue(2))
+        XCTAssertTrue(sut.enqueue(3))
+        XCTAssertTrue(sut.enqueue(4))
+        print(sut.description)
+        XCTAssertEqual(sut.peek, 1)
+    }
+    
+    func tests_dequeue_EmptyQueueRingBuffer() {
+        var sut = QueueRingBuffer<Int>(count: 5)
+        
+        print(sut.description)
+        XCTAssertEqual(sut.dequeue(), nil)
+        XCTAssertTrue(sut.isEmpty)
+    }
+    
+    func tests_dequeue_QueueRingBuffer() {
+        var sut = QueueRingBuffer<Int>(count: 5)
+        
+        XCTAssertTrue(sut.enqueue(1))
+        XCTAssertTrue(sut.enqueue(2))
+        XCTAssertTrue(sut.enqueue(3))
+        XCTAssertTrue(sut.enqueue(4))
+        print(sut.description)
+        XCTAssertEqual(sut.dequeue(), 1)
+    }
+    
+    func tests_enqueue_QueueStack() {
+        var sut = QueueStack<Int>()
+        
+        XCTAssertTrue(sut.enqueue(1))
+        XCTAssertTrue(sut.enqueue(2))
+        XCTAssertTrue(sut.enqueue(3))
+        XCTAssertTrue(sut.enqueue(4))
+        print(sut.description)
+        XCTAssertEqual(sut.peek, 1)
+    }
+    
+    func tests_dequeue_EmptyQueueStack() {
+        var sut = QueueStack<Int>()
+        
+        print(sut.description)
+        XCTAssertEqual(sut.dequeue(), nil)
+        XCTAssertTrue(sut.isEmpty)
+    }
+    
+    func tests_dequeue_QueueQueueStack() {
+        var sut = QueueStack<Int>()
+        
+        XCTAssertTrue(sut.enqueue(1))
+        XCTAssertTrue(sut.enqueue(2))
+        XCTAssertTrue(sut.enqueue(3))
+        XCTAssertTrue(sut.enqueue(4))
+        print(sut.description)
+        XCTAssertEqual(sut.dequeue(), 1)
+    }
 }
