@@ -100,7 +100,7 @@ class QueueTests: XCTestCase {
     }
     
     func tests_enqueue_QueueStack() {
-        var sut = QueueStack<Int>()
+        var sut = QueueDoubleStack<Int>()
         
         XCTAssertTrue(sut.enqueue(1))
         XCTAssertTrue(sut.enqueue(2))
@@ -111,7 +111,7 @@ class QueueTests: XCTestCase {
     }
     
     func tests_dequeue_EmptyQueueStack() {
-        var sut = QueueStack<Int>()
+        var sut = QueueDoubleStack<Int>()
         
         print(sut.description)
         XCTAssertEqual(sut.dequeue(), nil)
@@ -119,7 +119,7 @@ class QueueTests: XCTestCase {
     }
     
     func tests_dequeue_QueueQueueStack() {
-        var sut = QueueStack<Int>()
+        var sut = QueueDoubleStack<Int>()
         
         XCTAssertTrue(sut.enqueue(1))
         XCTAssertTrue(sut.enqueue(2))

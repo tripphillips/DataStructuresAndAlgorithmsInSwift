@@ -22,6 +22,25 @@ public class DoublyLinkedList<T> {
         head
     }
     
+    public var last: DoublyLinkedListNode<T>? {
+        tail
+    }
+    
+    public func prepend(_ value: T) {
+        let newNode = DoublyLinkedListNode(value: value)
+        
+        guard let headNode = head else {
+            head = newNode
+            tail = newNode
+            return
+        }
+        
+        newNode.previous = nil
+        newNode.next = headNode
+        headNode.previous = newNode
+        head = newNode
+    }
+    
     public func append(_ value: T) {
         
         let newNode = DoublyLinkedListNode(value: value)

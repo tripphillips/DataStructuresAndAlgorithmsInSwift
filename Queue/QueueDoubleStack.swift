@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct QueueStack<T>: Queueable {
+public struct QueueDoubleStack<T>: Queueable {
  
     private var leftStack: [T] = []
     private var rightStack: [T] = []
@@ -35,7 +35,7 @@ public struct QueueStack<T>: Queueable {
     }
 }
 
-extension QueueStack: CustomStringConvertible {
+extension QueueDoubleStack: CustomStringConvertible {
   public var description: String {
     String(describing: leftStack.reversed() + rightStack)
   }
