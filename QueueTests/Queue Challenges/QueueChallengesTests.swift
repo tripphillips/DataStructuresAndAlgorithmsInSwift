@@ -25,9 +25,9 @@ class QueueChallengesTests: XCTestCase {
     func test_QueueChallenge2_Reversed() {
         
         var sut = QueueArray<Int>()
-        sut.enqueue(1)
-        sut.enqueue(2)
-        sut.enqueue(3)
+        _ = sut.enqueue(1)
+        _ = sut.enqueue(2)
+        _ = sut.enqueue(3)
         
         var result = sut.reversed()
         XCTAssertEqual(result.dequeue(), 3)
@@ -39,33 +39,33 @@ class QueueChallengesTests: XCTestCase {
     func test_QueueChallenge3_Deque() {
         
         var sut = DequeDoubleLinkedList<Int>()
-        sut.enqueue(1, to: .back)
+        _ = sut.enqueue(1, to: .back)
         
         XCTAssertEqual(sut.peek(from: .front), 1)
         XCTAssertEqual(sut.peek(from: .back), 1)
         print(sut.description)
         
-        sut.enqueue(2, to: .front)
+        _ = sut.enqueue(2, to: .front)
         XCTAssertEqual(sut.peek(from: .front), 2)
         XCTAssertEqual(sut.peek(from: .back), 1)
         print(sut.description)
         
-        sut.enqueue(3, to: .back)
+        _ = sut.enqueue(3, to: .back)
         XCTAssertEqual(sut.peek(from: .front), 2)
         XCTAssertEqual(sut.peek(from: .back), 3)
         print(sut.description)
         
-        sut.enqueue(4, to: .back)
+        _ = sut.enqueue(4, to: .back)
         XCTAssertEqual(sut.peek(from: .front), 2)
         XCTAssertEqual(sut.peek(from: .back), 4)
         print(sut.description)
         
-        sut.dequeue(from: .front)
+        _ = sut.dequeue(from: .front)
         XCTAssertEqual(sut.peek(from: .front), 1)
         XCTAssertEqual(sut.peek(from: .back), 4)
         print(sut.description)
         
-        sut.dequeue(from: .back)
+        _ = sut.dequeue(from: .back)
         XCTAssertEqual(sut.peek(from: .front), 1)
         XCTAssertEqual(sut.peek(from: .back), 3)
         print(sut.description)

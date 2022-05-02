@@ -35,6 +35,7 @@
 		0DB375CA281EEC4100C4B1A0 /* QueueDoubleStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375C9281EEC4100C4B1A0 /* QueueDoubleStack.swift */; };
 		0DB375CD281EFCA600C4B1A0 /* QueueChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375CC281EFCA600C4B1A0 /* QueueChallenges.swift */; };
 		0DB375CF281EFF3500C4B1A0 /* QueueChallengesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB375CE281EFF3500C4B1A0 /* QueueChallengesTests.swift */; };
+		0DB375D02820190100C4B1A0 /* Stack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9FB24F2815E72B009F7D80 /* Stack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB375D02820190100C4B1A0 /* Stack.framework in Frameworks */,
 				0DB375A7281C57FA00C4B1A0 /* Queue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

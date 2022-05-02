@@ -23,7 +23,7 @@ class QueueChallenge_1_BoardGameManager<T>: BoardGameManager {
         queue = QueueArray<T>()
         
         for player in players {
-            queue.enqueue(player)
+            _ = queue.enqueue(player)
         }
     }
     
@@ -31,7 +31,7 @@ class QueueChallenge_1_BoardGameManager<T>: BoardGameManager {
         guard let person = queue.dequeue() else {
             return nil
         }
-        queue.enqueue(person)
+        _ = queue.enqueue(person)
         return person
     }
 }
@@ -47,7 +47,7 @@ extension QueueArray {
         }
         
         while let element = stack.pop() {
-            queue.enqueue(element)
+            _ = queue.enqueue(element)
         }
         
         return queue

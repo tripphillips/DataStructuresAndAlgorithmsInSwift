@@ -39,7 +39,7 @@ class QueueTests: XCTestCase {
     }
     
     func tests_enqueue_QueueLinkedList() {
-        var sut = QueueLinkedList<Int>()
+        let sut = QueueLinkedList<Int>()
         
         XCTAssertTrue(sut.enqueue(1))
         XCTAssertTrue(sut.enqueue(2))
@@ -50,7 +50,7 @@ class QueueTests: XCTestCase {
     }
     
     func tests_dequeue_EmptyQueueLinkedList() {
-        var sut = QueueLinkedList<Int>()
+        let sut = QueueLinkedList<Int>()
         
         print(sut.description)
         XCTAssertEqual(sut.dequeue(), nil)
@@ -58,7 +58,7 @@ class QueueTests: XCTestCase {
     }
     
     func tests_dequeue_QueueLinkedList() {
-        var sut = QueueLinkedList<Int>()
+        let sut = QueueLinkedList<Int>()
         
         XCTAssertTrue(sut.enqueue(1))
         XCTAssertTrue(sut.enqueue(2))
