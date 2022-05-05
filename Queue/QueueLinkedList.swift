@@ -9,10 +9,12 @@ import Foundation
 
 public class QueueLinkedList<T>: Queueable {
     private var list = DoublyLinkedList<T>()
+    private var counter = 0
     public init() {}
     
     public func enqueue(_ element: T) -> Bool {
         list.append(element)
+        counter += 1
         return true
     }
     
@@ -21,7 +23,12 @@ public class QueueLinkedList<T>: Queueable {
               let element = list.first else {
             return nil
         }
+        counter -= 1
         return list.remove(element)
+    }
+    
+    public var count: Int {
+        counter
     }
     
     public var isEmpty: Bool {
