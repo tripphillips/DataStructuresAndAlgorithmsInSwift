@@ -20,3 +20,30 @@ class BinaryTreeChallenge_1_HeightOfATree<T> {
         return 1 + max(height(of: node.leftChild), height(of: node.rightChild))
     }
 }
+
+class BinaryTreeChallenge_2_Serialization<T> {
+    
+    func serialize<T>(_ node: BinaryTreeNode<T>) -> [T?] {
+        var array: [T?] = []
+        node.preorderTraversalWithNil { array.append($0) }
+        return array
+    }
+    
+    func deserialize<T>(_ array: [T?]) -> BinaryTreeNode<T>? {
+        var reversed = Array(array.reversed())
+        return deserialize(&reversed)
+    }
+    
+    private func deserialize<T>(_ array: inout [T?]) -> BinaryTreeNode<T>? {
+        guard !array.isEmpty,
+              let value = array.removeLast() else {
+            return nil
+        }
+        
+        let node = BinaryTreeNode(value: value)
+        node.leftChild = deserialize(&array)
+        node.rightChild = deserialize(&array)
+        
+        return node
+    }
+}

@@ -20,6 +20,25 @@ class BinaryTreeChallengesTests: XCTestCase {
         XCTAssertEqual(result, 3)
     }
     
+    func test_serialization_Challenge2() {
+        let sut = BinaryTreeChallenge_2_Serialization<Int>()
+        let tree = makeBinaryTree()
+        
+        let serialization = sut.serialize(tree)
+        XCTAssertEqual(serialization, [0,1,3,nil,nil,4,nil,nil,2,5,6,nil,nil,nil,nil])
+    }
+    
+    func test_deserialization_Challenge2() {
+        let sut = BinaryTreeChallenge_2_Serialization<Int>()
+        let tree = makeBinaryTree()
+        
+        let serialization = sut.serialize(tree)
+        XCTAssertEqual(serialization, [0,1,3,nil,nil,4,nil,nil,2,5,6,nil,nil,nil,nil])
+        
+        let deserialization = sut.deserialize(serialization)
+        XCTAssertEqual(deserialization?.value, 0)
+    }
+    
     private func makeBinaryTree() -> BinaryTreeNode<Int> {
      
         let root = BinaryTreeNode(value: 0)

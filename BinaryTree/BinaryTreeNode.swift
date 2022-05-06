@@ -46,22 +46,37 @@ extension BinaryTreeNode: CustomStringConvertible {
 // MARK: - Traversals
 extension BinaryTreeNode {
     
-    func inorderTraversal(visit: (T) -> Void) {
+    public func inorderTraversal(visit: (T) -> Void) {
         leftChild?.inorderTraversal(visit: visit)
         visit(value)
         rightChild?.inorderTraversal(visit: visit)
     }
     
-    func preorderTraversal(visit: (T) -> Void) {
+    public func preorderTraversal(visit: (T) -> Void) {
         visit(value)
         leftChild?.preorderTraversal(visit: visit)
         rightChild?.preorderTraversal(visit: visit)
     }
     
-    func postorderTraversal(visit: (T) -> Void) {
+    public func postorderTraversal(visit: (T) -> Void) {
         leftChild?.postorderTraversal(visit: visit)
         rightChild?.postorderTraversal(visit: visit)
         visit(value)
+    }
+    
+    // For Challenge 2 - Serialization
+    public func preorderTraversalWithNil(visit: (T?) -> Void) {
+        visit(value)
+        if let leftChild = leftChild {
+            leftChild.preorderTraversalWithNil(visit: visit)
+        } else {
+            visit(nil)
+        }
+        if let rightChild = rightChild {
+            rightChild.preorderTraversalWithNil(visit: visit)
+        } else {
+            visit(nil)
+        }
     }
     
 }
