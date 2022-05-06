@@ -21,6 +21,8 @@
 		0D9D41F0282489920022FA74 /* BinaryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D41EF282489920022FA74 /* BinaryTreeTests.swift */; };
 		0D9D41F1282489920022FA74 /* BinaryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D9D41E5282489920022FA74 /* BinaryTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D9D41F92824AE750022FA74 /* BinaryTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D41F82824AE750022FA74 /* BinaryTreeNode.swift */; };
+		0D9D41FB2824D64C0022FA74 /* BinaryTreeChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D41FA2824D64C0022FA74 /* BinaryTreeChallenges.swift */; };
+		0D9D41FE2824D7590022FA74 /* BinaryTreeChallengesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D41FD2824D7590022FA74 /* BinaryTreeChallengesTests.swift */; };
 		0D9FB2582815E72B009F7D80 /* Stack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9FB24F2815E72B009F7D80 /* Stack.framework */; };
 		0D9FB25D2815E72B009F7D80 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FB25C2815E72B009F7D80 /* StackTests.swift */; };
 		0D9FB25E2815E72B009F7D80 /* Stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D9FB2522815E72B009F7D80 /* Stack.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -103,6 +105,8 @@
 		0D9D41EA282489920022FA74 /* BinaryTreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinaryTreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D9D41EF282489920022FA74 /* BinaryTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeTests.swift; sourceTree = "<group>"; };
 		0D9D41F82824AE750022FA74 /* BinaryTreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeNode.swift; sourceTree = "<group>"; };
+		0D9D41FA2824D64C0022FA74 /* BinaryTreeChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeChallenges.swift; sourceTree = "<group>"; };
+		0D9D41FD2824D7590022FA74 /* BinaryTreeChallengesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeChallengesTests.swift; sourceTree = "<group>"; };
 		0D9FB24F2815E72B009F7D80 /* Stack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D9FB2522815E72B009F7D80 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		0D9FB2572815E72B009F7D80 /* StackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,8 +269,18 @@
 			isa = PBXGroup;
 			children = (
 				0D9D41EF282489920022FA74 /* BinaryTreeTests.swift */,
+				0D9D41FC2824D7340022FA74 /* Binary Tree Challenges */,
 			);
 			path = BinaryTreeTests;
+			sourceTree = "<group>";
+		};
+		0D9D41FC2824D7340022FA74 /* Binary Tree Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				0D9D41FA2824D64C0022FA74 /* BinaryTreeChallenges.swift */,
+				0D9D41FD2824D7590022FA74 /* BinaryTreeChallengesTests.swift */,
+			);
+			path = "Binary Tree Challenges";
 			sourceTree = "<group>";
 		};
 		0D9FB2432815E6CB009F7D80 = {
@@ -812,7 +826,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9D41FB2824D64C0022FA74 /* BinaryTreeChallenges.swift in Sources */,
 				0D9D41F0282489920022FA74 /* BinaryTreeTests.swift in Sources */,
+				0D9D41FE2824D7590022FA74 /* BinaryTreeChallengesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
