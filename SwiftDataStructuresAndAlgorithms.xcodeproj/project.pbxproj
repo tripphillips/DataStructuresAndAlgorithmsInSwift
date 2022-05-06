@@ -20,6 +20,7 @@
 		0D9D41EB282489920022FA74 /* BinaryTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D41E3282489920022FA74 /* BinaryTree.framework */; };
 		0D9D41F0282489920022FA74 /* BinaryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D41EF282489920022FA74 /* BinaryTreeTests.swift */; };
 		0D9D41F1282489920022FA74 /* BinaryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D9D41E5282489920022FA74 /* BinaryTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D9D41F92824AE750022FA74 /* BinaryTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D41F82824AE750022FA74 /* BinaryTreeNode.swift */; };
 		0D9FB2582815E72B009F7D80 /* Stack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9FB24F2815E72B009F7D80 /* Stack.framework */; };
 		0D9FB25D2815E72B009F7D80 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FB25C2815E72B009F7D80 /* StackTests.swift */; };
 		0D9FB25E2815E72B009F7D80 /* Stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D9FB2522815E72B009F7D80 /* Stack.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,6 +102,7 @@
 		0D9D41E5282489920022FA74 /* BinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
 		0D9D41EA282489920022FA74 /* BinaryTreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinaryTreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D9D41EF282489920022FA74 /* BinaryTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeTests.swift; sourceTree = "<group>"; };
+		0D9D41F82824AE750022FA74 /* BinaryTreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeNode.swift; sourceTree = "<group>"; };
 		0D9FB24F2815E72B009F7D80 /* Stack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D9FB2522815E72B009F7D80 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		0D9FB2572815E72B009F7D80 /* StackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				0D9D41E5282489920022FA74 /* BinaryTree.h */,
+				0D9D41F82824AE750022FA74 /* BinaryTreeNode.swift */,
 			);
 			path = BinaryTree;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 					};
 					0D9D41E2282489920022FA74 = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 					};
 					0D9D41E9282489920022FA74 = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -800,6 +804,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9D41F92824AE750022FA74 /* BinaryTreeNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1363,6 +1368,7 @@
 		0D9D41F6282489920022FA74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1432,6 +1438,7 @@
 		0D9D41F7282489920022FA74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

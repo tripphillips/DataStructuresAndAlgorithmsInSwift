@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import Tree
+import @testable Tree
 
 class TreeChallengesTests: XCTestCase {
 
