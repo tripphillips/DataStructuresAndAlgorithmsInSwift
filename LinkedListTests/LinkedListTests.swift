@@ -15,7 +15,7 @@ class LinkedListTests: XCTestCase {
         
         let sut = LinkedListNode(value: 1)
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.value, 1)
         XCTAssertNil(sut.next)
@@ -26,7 +26,7 @@ class LinkedListTests: XCTestCase {
         let next = LinkedListNode(value: 2)
         let sut = LinkedListNode(value: 1, next: next)
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.value, 1)
         XCTAssertIdentical(sut.next, next)
@@ -54,7 +54,7 @@ class LinkedListTests: XCTestCase {
         var sut = LinkedList<Int>()
         sut.push(1)
         
-        print(sut.debugDescription)
+        print(sut.description)
         XCTAssertNotNil(sut.head)
         XCTAssertNotNil(sut.tail)
         XCTAssertIdentical(sut.head, sut.tail)
@@ -66,7 +66,7 @@ class LinkedListTests: XCTestCase {
         sut.push(2)
         sut.push(3)
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.head?.value, 3)
         XCTAssertEqual(sut.head?.next?.value, 2)
@@ -77,7 +77,7 @@ class LinkedListTests: XCTestCase {
         var sut = LinkedList<Int>()
         sut.append(1)
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertIdentical(sut.head, sut.tail)
         XCTAssertNotNil(sut.head)
@@ -90,7 +90,7 @@ class LinkedListTests: XCTestCase {
         sut.append(2)
         sut.append(3)
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.head?.value, 1)
         XCTAssertEqual(sut.head?.next?.value, 2)
@@ -100,7 +100,7 @@ class LinkedListTests: XCTestCase {
     func test_nodeAtIndex_IndexExists() {
         let sut = makeLinkedListWithMultipleValuesAppended()
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         let nodeAtIndex = sut.node(at: 1)
         XCTAssertEqual(nodeAtIndex?.value, 2)
@@ -111,7 +111,7 @@ class LinkedListTests: XCTestCase {
     func test_nodeAtIndex_IndexDoesNotExists() {
         let sut = LinkedList<Int>()
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         let nodeAtIndex = sut.node(at: 1)
         XCTAssertEqual(nodeAtIndex?.value, nil)
@@ -125,7 +125,7 @@ class LinkedListTests: XCTestCase {
         let nodeAtIndex = sut.node(at: 0)!
         sut.insert(4, after: nodeAtIndex)
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(nodeAtIndex.next?.value, 4)
         XCTAssertNotNil(sut.head)
@@ -138,7 +138,7 @@ class LinkedListTests: XCTestCase {
         
         sut.insert(4, after: nodeAtIndex)
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(nodeAtIndex.next?.value, 4)
         XCTAssertNotNil(sut.head)
@@ -151,7 +151,7 @@ class LinkedListTests: XCTestCase {
         
         sut.insert(4, after: nodeAtIndex)
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(nodeAtIndex.next?.value, 4)
         XCTAssertNotNil(sut.head)
@@ -164,7 +164,7 @@ class LinkedListTests: XCTestCase {
         
         sut.insert(4, after: nodeAtIndex)
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(nodeAtIndex.next?.value, 4)
         XCTAssertNotNil(sut.head)
@@ -174,7 +174,7 @@ class LinkedListTests: XCTestCase {
     func test_pop_EmptyLinkedList() {
         var sut = LinkedList<Int>()
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertNil(sut.pop())
         XCTAssertNil(sut.head)
@@ -185,7 +185,7 @@ class LinkedListTests: XCTestCase {
         var sut = LinkedList<Int>()
         sut.push(1)
     
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.pop(), 1)
         XCTAssertNil(sut.head)
@@ -195,7 +195,7 @@ class LinkedListTests: XCTestCase {
     func test_pop_MultipleNodeLinkedList() {
         var sut = makeLinkedListWithMultipleValuesAppended()
     
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.pop(), 1)
         XCTAssertEqual(sut.head?.value, 2)
@@ -205,7 +205,7 @@ class LinkedListTests: XCTestCase {
     func test_removeLast_EmptyLinkedList() {
         var sut = LinkedList<Int>()
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertNil(sut.removeLast())
         XCTAssertNil(sut.head)
@@ -216,7 +216,7 @@ class LinkedListTests: XCTestCase {
         var sut = LinkedList<Int>()
         sut.push(1)
     
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.removeLast(), 1)
         XCTAssertNil(sut.head)
@@ -226,7 +226,7 @@ class LinkedListTests: XCTestCase {
     func test_removeLast_MultipleNodeLinkedList() {
         var sut = makeLinkedListWithMultipleValuesAppended()
     
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.removeLast(), 3)
         XCTAssertEqual(sut.head?.value, 1)
@@ -239,7 +239,7 @@ class LinkedListTests: XCTestCase {
         
         let nodeAtIndex = sut.node(at: 0)!
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertNil(sut.remove(after: nodeAtIndex))
         XCTAssertEqual(sut.head?.value, 1)
@@ -251,7 +251,7 @@ class LinkedListTests: XCTestCase {
     
         let nodeAtIndex = sut.node(at: 0)!
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.remove(after: nodeAtIndex), 2)
         XCTAssertEqual(sut.head?.value, 1)
@@ -348,8 +348,8 @@ class LinkedListTests: XCTestCase {
 //        XCTAssertEqual(sut2.tail?.value, 3)
 //
 //        print("SUT")
-//        print(sut1.debugDescription)
-//        print(sut2.debugDescription)
+//        print(sut1.description)
+//        print(sut2.description)
 //    }
     
     func test_pop_doesLinkedListHaveValueSemantics() {

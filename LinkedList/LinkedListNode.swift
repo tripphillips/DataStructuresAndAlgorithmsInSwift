@@ -18,8 +18,8 @@ public class LinkedListNode<T: Comparable> {
     }
 }
 
-extension LinkedListNode: CustomDebugStringConvertible {
-    public var debugDescription: String {
+extension LinkedListNode: CustomStringConvertible {
+    public var description: String {
         guard let next = next else {
             return "\(value)"
         }

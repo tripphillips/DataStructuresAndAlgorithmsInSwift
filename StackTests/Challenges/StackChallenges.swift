@@ -46,7 +46,7 @@ class StackChallenge_2_BalanceParentheses {
         
         for char in strWithParentheses {
             
-            print(stack.debugDescription)
+            print(stack.description)
             switch char {
             case "(", "[", "{":
                 stack.push(char)

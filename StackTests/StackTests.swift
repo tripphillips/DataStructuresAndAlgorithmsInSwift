@@ -22,7 +22,7 @@ class StackTests: XCTestCase {
         1
         -----------
         """
-        XCTAssertEqual(expected, sut.debugDescription)
+        XCTAssertEqual(expected, sut.description)
     }
     
     func test_initialize_withLiteral() {
@@ -37,14 +37,14 @@ class StackTests: XCTestCase {
         1
         -----------
         """
-        XCTAssertEqual(expected, sut.debugDescription)
+        XCTAssertEqual(expected, sut.description)
     }
     
     func test_pop_returnsNilWithEmptyStack() {
         
         var sut = Stack<Int>()
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertNil(sut.pop())
     }
@@ -53,7 +53,7 @@ class StackTests: XCTestCase {
         
         var sut: Stack<Int> = [1,2,3,4,5]
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.pop(), 5)
     }
@@ -64,7 +64,7 @@ class StackTests: XCTestCase {
         
         sut.push(6)
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.pop(), 6)
     }
@@ -75,7 +75,7 @@ class StackTests: XCTestCase {
         
         sut.push(6)
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.pop(), 6)
     }
@@ -84,7 +84,7 @@ class StackTests: XCTestCase {
         
         let sut = Stack<Int>()
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertNil(sut.peek())
     }
@@ -93,7 +93,7 @@ class StackTests: XCTestCase {
         
         let sut: Stack<Int> = [1,2,3,4,5]
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertEqual(sut.peek(), 5)
     }
@@ -101,7 +101,7 @@ class StackTests: XCTestCase {
     func test_isEmpty_returnsTrueForEmptyStack() {
         let sut = Stack<Int>()
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertTrue(sut.isEmpty())
     }
@@ -109,7 +109,7 @@ class StackTests: XCTestCase {
     func test_isEmpty_returnsFalseForFilledStack() {
         let sut: Stack<Int> = [1,2,3,4,5]
         
-        print(sut.debugDescription)
+        print(sut.description)
         
         XCTAssertFalse(sut.isEmpty())
     }

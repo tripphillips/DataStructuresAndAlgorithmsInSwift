@@ -27,7 +27,7 @@ extension LinkedList: HeadTailLinkedListInspectable {
         var currentNode = head
         var currentIndex = 0
         
-        while let next = currentNode?.next && currentIndex < index {
+        while let next = currentNode?.next, currentIndex < index {
             currentNode = next
             currentIndex += 1
         }
