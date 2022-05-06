@@ -13,7 +13,7 @@ class BinaryTreeChallengesTests: XCTestCase {
     
     func test_heightOfATree_Challenge1() {
         let sut = BinaryTreeChallenge_1_HeightOfATree<Int>()
-        let tree = makeBinaryTree()
+        let tree = makeBinaryTree2()
         
         let result = sut.height(of: tree)
         
@@ -22,7 +22,7 @@ class BinaryTreeChallengesTests: XCTestCase {
     
     func test_serialization_Challenge2() {
         let sut = BinaryTreeChallenge_2_Serialization<Int>()
-        let tree = makeBinaryTree()
+        let tree = makeBinaryTree2()
         
         let serialization = sut.serialize(tree)
         XCTAssertEqual(serialization, [0,1,3,nil,nil,4,nil,nil,2,5,6,nil,nil,nil,nil])
@@ -30,7 +30,7 @@ class BinaryTreeChallengesTests: XCTestCase {
     
     func test_deserialization_Challenge2() {
         let sut = BinaryTreeChallenge_2_Serialization<Int>()
-        let tree = makeBinaryTree()
+        let tree = makeBinaryTree2()
         
         let serialization = sut.serialize(tree)
         XCTAssertEqual(serialization, [0,1,3,nil,nil,4,nil,nil,2,5,6,nil,nil,nil,nil])
@@ -39,7 +39,51 @@ class BinaryTreeChallengesTests: XCTestCase {
         XCTAssertEqual(deserialization?.value, 0)
     }
     
-    private func makeBinaryTree() -> BinaryTreeNode<Int> {
+    func test_inorderTraversal() {
+        let tree = makeBinaryTree1()
+        let sut = BinaryTreeChallenge_3_Traversals<Int>()
+        
+        let result = sut.inorderTraversal(tree)
+        
+        XCTAssertEqual(result, [0,1,5,7,8,9])
+    }
+    
+    func test_preorderTraversal() {
+        let tree = makeBinaryTree1()
+        let sut = BinaryTreeChallenge_3_Traversals<Int>()
+        
+        let result = sut.preorderTraversal(tree)
+        
+        XCTAssertEqual(result, [7,1,0,5,9,8])
+    }
+
+    func test_postorderTraversal() {
+        let tree = makeBinaryTree1()
+        let sut = BinaryTreeChallenge_3_Traversals<Int>()
+        
+        let result = sut.postorderTraversal(tree)
+        
+        XCTAssertEqual(result, [0,5,1,8,9,7])
+    }
+    
+    private func makeBinaryTree1() -> BinaryTreeNode<Int> {
+        let zero = BinaryTreeNode(value: 0)
+         let one = BinaryTreeNode(value: 1)
+         let five = BinaryTreeNode(value: 5)
+         let seven = BinaryTreeNode(value: 7)
+         let eight = BinaryTreeNode(value: 8)
+         let nine = BinaryTreeNode(value: 9)
+
+         seven.leftChild = one
+         one.leftChild = zero
+         one.rightChild = five
+         seven.rightChild = nine
+         nine.leftChild = eight
+
+         return seven
+    }
+    
+    private func makeBinaryTree2() -> BinaryTreeNode<Int> {
      
         let root = BinaryTreeNode(value: 0)
         

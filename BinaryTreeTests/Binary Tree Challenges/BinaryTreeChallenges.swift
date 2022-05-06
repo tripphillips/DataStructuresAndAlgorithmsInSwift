@@ -47,3 +47,87 @@ class BinaryTreeChallenge_2_Serialization<T> {
         return node
     }
 }
+
+class BinaryTreeChallenge_3_Traversals<T> {
+    
+    func inorderTraversal(_ node: BinaryTreeNode<T>) -> [T] {
+        // left, root, right
+        
+        var stack = Stack<BinaryTreeNode<T>>()
+        var result = [T]()
+        var current: BinaryTreeNode? = node
+        
+        while current != nil || !stack.isEmpty() {
+            
+            while current != nil {
+                stack.push(current!)
+                current = current!.leftChild
+            }
+            
+            current = stack.pop()
+            
+            result.append(current!.value)
+            
+            current = current?.rightChild
+            
+        }
+        
+        return result
+    }
+    
+    func preorderTraversal(_ node: BinaryTreeNode<T>) -> [T] {
+        // root, left, right
+        
+        var stack = Stack<BinaryTreeNode<T>>()
+        var result = [T]()
+        var current = node
+        
+        stack.push(current)
+        
+        while !stack.isEmpty() {
+            current = stack.pop()!
+            result.append(current.value)
+            
+            if current.rightChild != nil {
+                stack.push(current.rightChild!)
+            }
+            
+            if current.leftChild != nil {
+                stack.push(current.leftChild!)
+            }
+        }
+        
+        return result
+    }
+    
+    func postorderTraversal(_ node: BinaryTreeNode<T>) -> [T] {
+       
+        // left, right, root
+        
+        var stack1 = Stack<BinaryTreeNode<T>>()
+        var stack2 = Stack<BinaryTreeNode<T>>()
+        var result = [T]()
+        var current = node
+        stack1.push(current)
+        
+        while !stack1.isEmpty() {
+            
+            current = stack1.pop()!
+            stack2.push(current)
+            
+            if current.leftChild != nil {
+                stack1.push(current.leftChild!)
+            }
+            
+            if current.rightChild != nil {
+                stack1.push(current.rightChild!)
+            }
+        }
+        
+        while !stack2.isEmpty() {
+            result.append(stack2.pop()!.value)
+        }
+        
+        return result
+    }
+}
