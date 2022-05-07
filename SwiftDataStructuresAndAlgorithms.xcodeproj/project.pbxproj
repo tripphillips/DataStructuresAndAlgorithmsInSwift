@@ -63,6 +63,9 @@
 		0DF62E652826F4EF005B1050 /* AVLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF62E642826F4EF005B1050 /* AVLNode.swift */; };
 		0DF62E672826F9E0005B1050 /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF62E662826F9E0005B1050 /* AVLTree.swift */; };
 		0DF62E6A2826FA58005B1050 /* AVLTreeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF62E682826FA55005B1050 /* AVLTreeProtocols.swift */; };
+		0DF62E6D28270411005B1050 /* AVLTreeChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF62E6C28270411005B1050 /* AVLTreeChallenges.swift */; };
+		0DF62E6F28270422005B1050 /* AVLTreeChallengesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF62E6E28270422005B1050 /* AVLTreeChallengesTests.swift */; };
+		0DF62E70282706FB005B1050 /* AVLTreeChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF62E6C28270411005B1050 /* AVLTreeChallenges.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +180,8 @@
 		0DF62E642826F4EF005B1050 /* AVLNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLNode.swift; sourceTree = "<group>"; };
 		0DF62E662826F9E0005B1050 /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
 		0DF62E682826FA55005B1050 /* AVLTreeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTreeProtocols.swift; sourceTree = "<group>"; };
+		0DF62E6C28270411005B1050 /* AVLTreeChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTreeChallenges.swift; sourceTree = "<group>"; };
+		0DF62E6E28270422005B1050 /* AVLTreeChallengesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTreeChallengesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -544,9 +549,19 @@
 		0DF62E5A2826EC0B005B1050 /* AVLTreeTests */ = {
 			isa = PBXGroup;
 			children = (
+				0DF62E6B282703DE005B1050 /* AVL Tree Challenges */,
 				0DF62E5B2826EC0B005B1050 /* AVLTreeTests.swift */,
 			);
 			path = AVLTreeTests;
+			sourceTree = "<group>";
+		};
+		0DF62E6B282703DE005B1050 /* AVL Tree Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				0DF62E6C28270411005B1050 /* AVLTreeChallenges.swift */,
+				0DF62E6E28270422005B1050 /* AVLTreeChallengesTests.swift */,
+			);
+			path = "AVL Tree Challenges";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1182,6 +1197,7 @@
 				0DF62E652826F4EF005B1050 /* AVLNode.swift in Sources */,
 				0DF62E672826F9E0005B1050 /* AVLTree.swift in Sources */,
 				0DF62E6A2826FA58005B1050 /* AVLTreeProtocols.swift in Sources */,
+				0DF62E70282706FB005B1050 /* AVLTreeChallenges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1189,7 +1205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF62E6F28270422005B1050 /* AVLTreeChallengesTests.swift in Sources */,
 				0DF62E5C2826EC0B005B1050 /* AVLTreeTests.swift in Sources */,
+				0DF62E6D28270411005B1050 /* AVLTreeChallenges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

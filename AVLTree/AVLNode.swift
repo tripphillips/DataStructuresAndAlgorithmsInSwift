@@ -8,7 +8,7 @@
 import Foundation
 import BinaryTree
 
-public class AVLNode<T> {
+public final class AVLNode<T> {
     public var value: T
     public var leftChild: AVLNode<T>?
     public var rightChild: AVLNode<T>?
@@ -31,6 +31,8 @@ public class AVLNode<T> {
         self.value = value
     }
 }
+
+extension AVLNode: TraversableBinaryNode {}
 
 extension AVLNode: CustomStringConvertible {
   
