@@ -1,29 +1,29 @@
 //
-//  BinarySearchTreeProtocols.swift
-//  BinarySearchTree
+//  AVLTreeProtocols.swift
+//  AVLTree
 //
 //  Created by Trip Phillips on 5/7/22.
 //
 
 import Foundation
 
-public protocol BinarySearchTreeInsertable {
+public protocol AVLTreeInsertable {
     associatedtype T
     
     /// Inserts a value into a binary search tree
     /// - Parameters:
     ///     - value: The value to insert
-    mutating func insert(_ value: T) 
+    mutating func insert(_ value: T)
 }
 
 
-public protocol BinarySearchTreeInspectable {
+public protocol AVLTreeInspectable {
     associatedtype T
     
-    func contains(_ value: T) -> Bool 
+    func contains(_ value: T) -> Bool
 }
 
-public protocol BinarySearchTreeRemovable {
+public protocol AVLTreeRemovable {
     associatedtype T
     
     /// Removes a value in a binary search tree

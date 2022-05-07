@@ -7,7 +7,6 @@
 
 import Foundation
 import BinaryTree
-import AppKit
 
 public struct BinarySearchTree<T: Comparable> {
     
