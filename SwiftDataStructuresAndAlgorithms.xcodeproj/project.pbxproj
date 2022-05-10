@@ -74,7 +74,7 @@
 		0DF62EA1282ADFC3005B1050 /* BinarySearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF62E99282ADFC2005B1050 /* BinarySearch.framework */; };
 		0DF62EA6282ADFC3005B1050 /* BinarySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF62EA5282ADFC3005B1050 /* BinarySearchTests.swift */; };
 		0DF62EA7282ADFC3005B1050 /* BinarySearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DF62E9B282ADFC2005B1050 /* BinarySearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DF62EAF282ADFEC005B1050 /* RandomAccessColletion+BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF62EAE282ADFEC005B1050 /* RandomAccessColletion+BinarySearch.swift */; };
+		0DF62EAF282ADFEC005B1050 /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF62EAE282ADFEC005B1050 /* BinarySearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,7 +215,7 @@
 		0DF62E9B282ADFC2005B1050 /* BinarySearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinarySearch.h; sourceTree = "<group>"; };
 		0DF62EA0282ADFC3005B1050 /* BinarySearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BinarySearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF62EA5282ADFC3005B1050 /* BinarySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTests.swift; sourceTree = "<group>"; };
-		0DF62EAE282ADFEC005B1050 /* RandomAccessColletion+BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessColletion+BinarySearch.swift"; sourceTree = "<group>"; };
+		0DF62EAE282ADFEC005B1050 /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -658,7 +658,7 @@
 			isa = PBXGroup;
 			children = (
 				0DF62E9B282ADFC2005B1050 /* BinarySearch.h */,
-				0DF62EAE282ADFEC005B1050 /* RandomAccessColletion+BinarySearch.swift */,
+				0DF62EAE282ADFEC005B1050 /* BinarySearch.swift */,
 			);
 			path = BinarySearch;
 			sourceTree = "<group>";
@@ -1473,7 +1473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DF62EAF282ADFEC005B1050 /* RandomAccessColletion+BinarySearch.swift in Sources */,
+				0DF62EAF282ADFEC005B1050 /* BinarySearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
