@@ -46,6 +46,32 @@ class TrieTests: XCTestCase {
         XCTAssertNotEqual(result, ["Test", "TestFooBar"])
     }
     
+    func test_collections_InTrie() {
+        let sut = makeTrie()
+        let collections = sut.collections
+        XCTAssertEqual(["Test", "Foo", "Bar", "TestFooBar"], collections)
+    }
+    
+    func test_isEmpty_inEmptyTrie() {
+        let sut = makeEmptyTrie()
+        XCTAssertTrue(sut.isEmpty)
+    }
+    
+    func test_isEmpty_inTrie() {
+        let sut = makeTrie()
+        XCTAssertFalse(sut.isEmpty)
+    }
+    
+    func test_count_inEmptyTrie() {
+        let sut = makeEmptyTrie()
+        XCTAssertEqual(0, sut.count)
+    }
+    
+    func test_count_inTrie() {
+        let sut = makeTrie()
+        XCTAssertEqual(4, sut.count)
+    }
+    
     private func makeEmptyTrie() -> Trie<String> {
         let trie = Trie<String>()
         return trie

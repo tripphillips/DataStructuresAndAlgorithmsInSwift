@@ -7,13 +7,23 @@
 
 import Foundation
 
-public class Trie<CollectionType: Collection> where CollectionType.Element: Hashable {
+public class Trie<CollectionType: Collection & Hashable> where CollectionType.Element: Hashable {
     
     public typealias Node = TrieNode<CollectionType.Element>
     
     private let root = Node(key: nil, parent: nil)
     
     public init() {}
+    
+    public private(set) var collections: Set<CollectionType> = []
+    
+    public var count: Int {
+        return collections.count
+    }
+    
+    public var isEmpty: Bool {
+        return collections.isEmpty
+    }
     
     public func insert(_ collection: CollectionType) {
         var current = root
@@ -26,7 +36,12 @@ public class Trie<CollectionType: Collection> where CollectionType.Element: Hash
             current = current.children[element]!
         }
         
-        current.isTerminating = true
+        if current.isTerminating {
+            return
+        } else {
+            current.isTerminating = true
+            collections.insert(collection)
+        }
     }
     
     public func contains(_ collection: CollectionType) -> Bool {
@@ -59,6 +74,7 @@ public class Trie<CollectionType: Collection> where CollectionType.Element: Hash
         }
         
         current.isTerminating = false
+        collections.remove(collection)
         
         while let parent = current.parent,
                 current.children.isEmpty && !current.isTerminating {
@@ -101,3 +117,4 @@ public extension Trie where CollectionType: RangeReplaceableCollection {
         return results
     }
 }
+
