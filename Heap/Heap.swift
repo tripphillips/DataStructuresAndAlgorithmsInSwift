@@ -48,7 +48,7 @@ public struct Heap<T: Equatable> {
         (index - 1) / 2
     }
     
-    public mutating func remote() -> T? {
+    public mutating func remove() -> T? {
         guard !isEmpty else { return nil }
         
         elements.swapAt(0, count - 1)
@@ -60,7 +60,7 @@ public struct Heap<T: Equatable> {
         return elements.removeLast()
     }
     
-    public mutating func remote(at index: Int) -> T? {
+    public mutating func remove(at index: Int) -> T? {
         guard index < elements.count else { return nil }
         
         if index == elements.count - 1 {
@@ -105,7 +105,7 @@ public struct Heap<T: Equatable> {
         
         return nil
     }
-    
+  
     private mutating func siftUp(from index: Int) {
         var child = index
         var parent = parentIndex(ofChildAt: child)

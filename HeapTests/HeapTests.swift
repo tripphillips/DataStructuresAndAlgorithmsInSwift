@@ -39,12 +39,12 @@ class HeapTests: XCTestCase {
     
     func test_remove_MinHeap() {
         var sut = makeSUT(sort: <)
-        XCTAssertEqual(sut.remote(), 1)
+        XCTAssertEqual(sut.remove(), 1)
     }
     
     func test_removeAt_MinHeap() {
         var sut = makeSUT(sort: <)
-        XCTAssertEqual(sut.remote(at: 0), 1)
+        XCTAssertEqual(sut.remove(at: 0), 1)
     }
     
     func test_peek_MinHeep() {
