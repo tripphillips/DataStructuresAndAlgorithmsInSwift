@@ -17,11 +17,7 @@ public struct Heap<T: Equatable> {
         self.sort = sort
         self.elements = elements
         
-        if !elements.isEmpty {
-            for i in stride(from: elements.count / 2 - 1, through: 0, by: -1) {
-                siftDown(from: i)
-            }
-        }
+        buildHeap()
     }
     
     public var isEmpty: Bool {
@@ -104,6 +100,19 @@ public struct Heap<T: Equatable> {
         }
         
         return nil
+    }
+    
+    public mutating func merge(_ heap: Heap) {
+      elements = elements + heap.elements
+      buildHeap()
+    }
+    
+    private mutating func buildHeap() {
+        if !elements.isEmpty {
+            for i in stride(from: elements.count / 2 - 1, through: 0, by: -1) {
+                siftDown(from: i)
+            }
+        }
     }
   
     private mutating func siftUp(from index: Int) {

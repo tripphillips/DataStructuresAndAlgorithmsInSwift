@@ -18,12 +18,12 @@ class HeapTests: XCTestCase {
     
     func test_remove_MaxHeap() {
         var sut = makeSUT(sort: >)
-        XCTAssertEqual(sut.remote(), 12)
+        XCTAssertEqual(sut.remove(), 12)
     }
     
     func test_removeAt_MaxHeap() {
         var sut = makeSUT(sort: >)
-        XCTAssertEqual(sut.remote(at: 0), 12)
+        XCTAssertEqual(sut.remove(at: 0), 12)
     }
     
     func test_peek_MaxHeep() {
@@ -52,7 +52,20 @@ class HeapTests: XCTestCase {
         XCTAssertEqual(sut.peek(), 1)
     }
     
+    func test_merge_Heaps() {
+        
+        var sut1 = makeSUT(sort: <)
+        XCTAssertEqual(sut1.peek(), 1)
+        let sut2 = makeSUT2(sort: <)
+        sut1.merge(sut2)
+        XCTAssertEqual(sut1.peek(), -1)
+    }
+    
     private func makeSUT(sort: @escaping (Int, Int) -> Bool) -> Heap<Int> {
         return Heap<Int>(sort: sort, elements: [1,12,3,4,1,6,8,7])
+    }
+    
+    private func makeSUT2(sort: @escaping (Int, Int) -> Bool) -> Heap<Int> {
+        return Heap<Int>(sort: sort, elements: [-1,5,10,9,13,11])
     }
 }

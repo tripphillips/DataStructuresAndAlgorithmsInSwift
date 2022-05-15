@@ -61,6 +61,8 @@
 		0DCA34C82830689100AC1720 /* HeapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA34C72830689100AC1720 /* HeapTests.swift */; };
 		0DCA34C92830689100AC1720 /* Heap.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DCA34BD2830689100AC1720 /* Heap.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0DCA34D12830689E00AC1720 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA34D02830689E00AC1720 /* Heap.swift */; };
+		0DCA34D5283093D000AC1720 /* HeapChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA34D4283093D000AC1720 /* HeapChallenges.swift */; };
+		0DCA34D7283093DC00AC1720 /* HeapChallengesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCA34D6283093DC00AC1720 /* HeapChallengesTests.swift */; };
 		0DF62E572826EC0B005B1050 /* AVLTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF62E4F2826EC0A005B1050 /* AVLTree.framework */; };
 		0DF62E5C2826EC0B005B1050 /* AVLTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF62E5B2826EC0B005B1050 /* AVLTreeTests.swift */; };
 		0DF62E5D2826EC0B005B1050 /* AVLTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DF62E512826EC0B005B1050 /* AVLTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -212,6 +214,8 @@
 		0DCA34C22830689100AC1720 /* HeapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCA34C72830689100AC1720 /* HeapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapTests.swift; sourceTree = "<group>"; };
 		0DCA34D02830689E00AC1720 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		0DCA34D4283093D000AC1720 /* HeapChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapChallenges.swift; sourceTree = "<group>"; };
+		0DCA34D6283093DC00AC1720 /* HeapChallengesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapChallengesTests.swift; sourceTree = "<group>"; };
 		0DF62E4F2826EC0A005B1050 /* AVLTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AVLTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF62E512826EC0B005B1050 /* AVLTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVLTree.h; sourceTree = "<group>"; };
 		0DF62E562826EC0B005B1050 /* AVLTreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVLTreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -654,9 +658,19 @@
 		0DCA34C62830689100AC1720 /* HeapTests */ = {
 			isa = PBXGroup;
 			children = (
+				0DCA34D3283093C100AC1720 /* Heap Challenges */,
 				0DCA34C72830689100AC1720 /* HeapTests.swift */,
 			);
 			path = HeapTests;
+			sourceTree = "<group>";
+		};
+		0DCA34D3283093C100AC1720 /* Heap Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				0DCA34D4283093D000AC1720 /* HeapChallenges.swift */,
+				0DCA34D6283093DC00AC1720 /* HeapChallengesTests.swift */,
+			);
+			path = "Heap Challenges";
 			sourceTree = "<group>";
 		};
 		0DF62E502826EC0A005B1050 /* AVLTree */ = {
@@ -1563,6 +1577,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DCA34C82830689100AC1720 /* HeapTests.swift in Sources */,
+				0DCA34D7283093DC00AC1720 /* HeapChallengesTests.swift in Sources */,
+				0DCA34D5283093D000AC1720 /* HeapChallenges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
