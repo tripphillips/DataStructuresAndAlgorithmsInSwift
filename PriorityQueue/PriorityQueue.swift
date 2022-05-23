@@ -9,28 +9,28 @@ import Foundation
 import Queue
 import Heap
 
-struct PriorityQueue<T: Equatable>: Queueable {
+public struct PriorityQueue<T: Equatable>: Queueable {
     
     private var heap: Heap<T>
     
-    init(sort: @escaping (T,T) -> Bool, elements: [T] = []) {
+    public init(sort: @escaping (T,T) -> Bool, elements: [T] = []) {
         heap = Heap(sort: sort, elements: elements)
     }
     
-    var isEmpty: Bool {
+    public var isEmpty: Bool {
         heap.isEmpty
     }
     
-    var peek: T? {
+    public var peek: T? {
         heap.peek()
     }
     
-    mutating func enqueue(_ element: T) -> Bool {
+    public mutating func enqueue(_ element: T) -> Bool {
         heap.insert(element)
         return true
     }
     
-    mutating func dequeue() -> T? {
+    public mutating func dequeue() -> T? {
         heap.remove()
     }
     
