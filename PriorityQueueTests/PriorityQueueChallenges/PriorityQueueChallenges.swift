@@ -21,7 +21,7 @@ struct PriorityQueueChallenge_1_ArrayBasedPriorityQueue<T: Comparable>: Queueabl
     }
     
     mutating func enqueue(_ element: T) -> Bool {
-        for (index, otherElement) in elements.enumerated() {
+        for (index, otherElement) in zip(elements.indices, elements) {
             if sort(element, otherElement) {
                 elements.insert(element, at: index)
                 return true
