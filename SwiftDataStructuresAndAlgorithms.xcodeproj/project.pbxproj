@@ -54,6 +54,8 @@
 		0DA3660228407E070006A969 /* RadixSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3660128407E070006A969 /* RadixSort.swift */; };
 		0DA3660B284083710006A969 /* RadixSortChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3660A284083710006A969 /* RadixSortChallenges.swift */; };
 		0DA3660D284084390006A969 /* RadixSortChallengesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3660C284084390006A969 /* RadixSortChallengesTests.swift */; };
+		0DA3662C28408E6D0006A969 /* HeapSortChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3662B28408E6D0006A969 /* HeapSortChallenges.swift */; };
+		0DA3662E28408FD20006A969 /* HeapSortChallengesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3662D28408FD20006A969 /* HeapSortChallengesTests.swift */; };
 		0DB3755D281A413B00C4B1A0 /* LinkedList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB37555281A413B00C4B1A0 /* LinkedList.framework */; };
 		0DB37562281A413B00C4B1A0 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB37561281A413B00C4B1A0 /* LinkedListTests.swift */; };
 		0DB37563281A413B00C4B1A0 /* LinkedList.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB37557281A413B00C4B1A0 /* LinkedList.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -294,6 +296,8 @@
 		0DA3660128407E070006A969 /* RadixSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadixSort.swift; sourceTree = "<group>"; };
 		0DA3660A284083710006A969 /* RadixSortChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadixSortChallenges.swift; sourceTree = "<group>"; };
 		0DA3660C284084390006A969 /* RadixSortChallengesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadixSortChallengesTests.swift; sourceTree = "<group>"; };
+		0DA3662B28408E6D0006A969 /* HeapSortChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapSortChallenges.swift; sourceTree = "<group>"; };
+		0DA3662D28408FD20006A969 /* HeapSortChallengesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapSortChallengesTests.swift; sourceTree = "<group>"; };
 		0DB37555281A413B00C4B1A0 /* LinkedList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LinkedList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB37557281A413B00C4B1A0 /* LinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
 		0DB3755C281A413B00C4B1A0 /* LinkedListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinkedListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -841,6 +845,15 @@
 			path = RadixSortChallenges;
 			sourceTree = "<group>";
 		};
+		0DA3662A28408E5C0006A969 /* HeapSort Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				0DA3662B28408E6D0006A969 /* HeapSortChallenges.swift */,
+				0DA3662D28408FD20006A969 /* HeapSortChallengesTests.swift */,
+			);
+			path = "HeapSort Challenges";
+			sourceTree = "<group>";
+		};
 		0DB37556281A413B00C4B1A0 /* LinkedList */ = {
 			isa = PBXGroup;
 			children = (
@@ -939,6 +952,7 @@
 		0DCA34C62830689100AC1720 /* HeapTests */ = {
 			isa = PBXGroup;
 			children = (
+				0DA3662A28408E5C0006A969 /* HeapSort Challenges */,
 				0DCA34D3283093C100AC1720 /* Heap Challenges */,
 				0DCA34C72830689100AC1720 /* HeapTests.swift */,
 			);
@@ -2200,9 +2214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA3662E28408FD20006A969 /* HeapSortChallengesTests.swift in Sources */,
 				0DCA34C82830689100AC1720 /* HeapTests.swift in Sources */,
 				0DCA34D7283093DC00AC1720 /* HeapChallengesTests.swift in Sources */,
 				0DCA34D5283093D000AC1720 /* HeapChallenges.swift in Sources */,
+				0DA3662C28408E6D0006A969 /* HeapSortChallenges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

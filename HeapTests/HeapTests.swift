@@ -61,6 +61,16 @@ class HeapTests: XCTestCase {
         XCTAssertEqual(sut1.peek(), -1)
     }
     
+    func test_sorted_HeapMax() {
+        let sut = makeSUT(sort: >)
+        XCTAssertEqual(sut.sorted(), [1,1,3,4,6,7,8,12])
+    }
+    
+    func test_sorted_HeapMin() {
+        let sut = makeSUT(sort: <)
+        XCTAssertEqual(sut.sorted(), [12,8,7,6,4,3,1,1])
+    }
+    
     private func makeSUT(sort: @escaping (Int, Int) -> Bool) -> Heap<Int> {
         return Heap<Int>(sort: sort, elements: [1,12,3,4,1,6,8,7])
     }

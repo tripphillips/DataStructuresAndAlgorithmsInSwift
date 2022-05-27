@@ -50,7 +50,7 @@ public struct Heap<T: Equatable> {
         elements.swapAt(0, count - 1)
         
         defer {
-            siftDown(from: 0)
+            siftDown(from: 0, upTo: count)
         }
         
         return elements.removeLast()
@@ -65,7 +65,7 @@ public struct Heap<T: Equatable> {
             elements.swapAt(index, elements.count - 1)
             
             defer {
-                siftDown(from: index)
+                siftDown(from: index, upTo: count)
                 siftUp(from: index)
             }
             
@@ -110,7 +110,7 @@ public struct Heap<T: Equatable> {
     private mutating func buildHeap() {
         if !elements.isEmpty {
             for i in stride(from: elements.count / 2 - 1, through: 0, by: -1) {
-                siftDown(from: i)
+                siftDown(from: i, upTo: count)
             }
         }
     }
@@ -126,7 +126,7 @@ public struct Heap<T: Equatable> {
         }
     }
     
-    private mutating func siftDown(from index: Int) {
+    private mutating func siftDown(from index: Int, upTo size: Int) {
         var parent = index
         while true {
             
@@ -134,11 +134,11 @@ public struct Heap<T: Equatable> {
             let right = rightChildIndex(ofParentAt: parent)
             var candidate = parent
             
-            if left < count && sort(elements[left], elements[candidate]) {
+            if left < size && sort(elements[left], elements[candidate]) {
                 candidate = left
             }
             
-            if right < count && sort(elements[right], elements[candidate]) {
+            if right < size && sort(elements[right], elements[candidate]) {
                 candidate = right
             }
             
@@ -150,4 +150,22 @@ public struct Heap<T: Equatable> {
             parent = candidate
         }
     }
+}
+
+extension Heap {
+    
+    func sorted() -> [T] {
+        
+        var heap = Heap(sort: sort, elements: elements)
+        
+        for index in heap.elements.indices.reversed() {
+            
+            heap.elements.swapAt(0, index)
+            heap.siftDown(from: 0, upTo: index)
+            
+        }
+        
+        return heap.elements
+    }
+    
 }

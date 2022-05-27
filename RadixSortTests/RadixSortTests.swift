@@ -28,7 +28,7 @@ class RadixSortTests: XCTestCase {
         XCTAssertEqual(elements, [1,2,4])
     }
     
-    func test_mradixSort_10Elements() {
+    func test_radixSort_10Elements() {
         var elements = [2,1,9,4,3,8,10,5,6,7]
         elements.radixSort()
         XCTAssertEqual(elements, [1,2,3,4,5,6,7,8,9,10])
