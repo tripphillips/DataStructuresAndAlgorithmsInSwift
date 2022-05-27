@@ -60,6 +60,10 @@
 		0DA36641284105EA0006A969 /* QuickSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA36640284105EA0006A969 /* QuickSortTests.swift */; };
 		0DA36642284105EA0006A969 /* QuickSort.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA36636284105EA0006A969 /* QuickSort.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0DA3664A284105F80006A969 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA36649284105F80006A969 /* QuickSort.swift */; };
+		0DA3664C284137120006A969 /* Stack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9FB24F2815E72B009F7D80 /* Stack.framework */; };
+		0DA3664D284137120006A969 /* Stack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9FB24F2815E72B009F7D80 /* Stack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0DA366532841394A0006A969 /* QuickSortChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA366522841394A0006A969 /* QuickSortChallenges.swift */; };
+		0DA3665528413A2D0006A969 /* QuickSortChallengesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3665428413A2D0006A969 /* QuickSortChallengesTests.swift */; };
 		0DB3755D281A413B00C4B1A0 /* LinkedList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB37555281A413B00C4B1A0 /* LinkedList.framework */; };
 		0DB37562281A413B00C4B1A0 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB37561281A413B00C4B1A0 /* LinkedListTests.swift */; };
 		0DB37563281A413B00C4B1A0 /* LinkedList.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB37557281A413B00C4B1A0 /* LinkedList.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -174,6 +178,13 @@
 			remoteGlobalIDString = 0DA36633284105EA0006A969;
 			remoteInfo = QuickSort;
 		};
+		0DA3664E284137120006A969 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D9FB2442815E6CB009F7D80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D9FB24E2815E72B009F7D80;
+			remoteInfo = Stack;
+		};
 		0DB3755E281A413B00C4B1A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D9FB2442815E6CB009F7D80 /* Project object */;
@@ -240,6 +251,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0DA36650284137120006A969 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0DA3664D284137120006A969 /* Stack.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DCA34F82831893100AC1720 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,6 +336,8 @@
 		0DA3663B284105EA0006A969 /* QuickSortTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickSortTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DA36640284105EA0006A969 /* QuickSortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSortTests.swift; sourceTree = "<group>"; };
 		0DA36649284105F80006A969 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
+		0DA366522841394A0006A969 /* QuickSortChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSortChallenges.swift; sourceTree = "<group>"; };
+		0DA3665428413A2D0006A969 /* QuickSortChallengesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSortChallengesTests.swift; sourceTree = "<group>"; };
 		0DB37555281A413B00C4B1A0 /* LinkedList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LinkedList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB37557281A413B00C4B1A0 /* LinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
 		0DB3755C281A413B00C4B1A0 /* LinkedListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinkedListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -483,6 +507,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA3664C284137120006A969 /* Stack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,9 +926,19 @@
 		0DA3663F284105EA0006A969 /* QuickSortTests */ = {
 			isa = PBXGroup;
 			children = (
+				0DA366512841393A0006A969 /* QuickSortChallenges */,
 				0DA36640284105EA0006A969 /* QuickSortTests.swift */,
 			);
 			path = QuickSortTests;
+			sourceTree = "<group>";
+		};
+		0DA366512841393A0006A969 /* QuickSortChallenges */ = {
+			isa = PBXGroup;
+			children = (
+				0DA366522841394A0006A969 /* QuickSortChallenges.swift */,
+				0DA3665428413A2D0006A969 /* QuickSortChallengesTests.swift */,
+			);
+			path = QuickSortChallenges;
 			sourceTree = "<group>";
 		};
 		0DB37556281A413B00C4B1A0 /* LinkedList */ = {
@@ -1488,10 +1523,12 @@
 				0DA36630284105EA0006A969 /* Sources */,
 				0DA36631284105EA0006A969 /* Frameworks */,
 				0DA36632284105EA0006A969 /* Resources */,
+				0DA36650284137120006A969 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0DA3664F284137120006A969 /* PBXTargetDependency */,
 			);
 			name = QuickSort;
 			productName = QuickSort;
@@ -2289,6 +2326,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DA36641284105EA0006A969 /* QuickSortTests.swift in Sources */,
+				0DA3665528413A2D0006A969 /* QuickSortChallengesTests.swift in Sources */,
+				0DA366532841394A0006A969 /* QuickSortChallenges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2471,6 +2510,11 @@
 			isa = PBXTargetDependency;
 			target = 0DA36633284105EA0006A969 /* QuickSort */;
 			targetProxy = 0DA3663D284105EA0006A969 /* PBXContainerItemProxy */;
+		};
+		0DA3664F284137120006A969 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D9FB24E2815E72B009F7D80 /* Stack */;
+			targetProxy = 0DA3664E284137120006A969 /* PBXContainerItemProxy */;
 		};
 		0DB3755F281A413B00C4B1A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

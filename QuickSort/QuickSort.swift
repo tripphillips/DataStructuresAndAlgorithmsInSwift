@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Stack
 
 public struct QuickSort {
     
@@ -29,6 +30,35 @@ public struct QuickSort {
             quickSortLumunto(&array, low: low, high: pivot - 1)
             quickSortLumunto(&array, low: pivot + 1, high: high)
         }
+    }
+    
+    public static func quickSortIterativeLumunto<T: Comparable>(_ array: inout [T],
+                                                                low: Int,
+                                                                high: Int) {
+        var stack = Stack<Int>()
+        stack.push(low)
+        stack.push(high)
+        
+        while !stack.isEmpty() {
+            
+            guard let end = stack.pop(),
+                  let start = stack.pop() else {
+                continue
+            }
+            
+            let pivot = partitionLumonto(&array, low: start, high: end)
+            
+            if (pivot - 1) > start {
+                stack.push(start)
+                stack.push(pivot - 1)
+            }
+            
+            if (pivot + 1) < end {
+                stack.push(pivot + 1)
+                stack.push(end)
+            }
+        }
+        
     }
     
     public static func partitionLumonto<T: Comparable>(_ array: inout [T],
