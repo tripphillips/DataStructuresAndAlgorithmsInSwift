@@ -180,6 +180,30 @@ class GraphTests: XCTestCase {
         XCTAssertFalse(sut.isConnected)
     }
     
+    func test_depthFirstSearchIterative_AdjacencyList() {
+        let (a, graph) = makeBasicAdjacencyListUndirectedSUT()
+        let visited = graph.depthFirstSearchIterative(from: a).map { $0.data }
+        XCTAssertEqual(visited, ["A", "D", "C", "G", "F", "E", "H", "B"])
+    }
+    
+    func test_depthFirstSearchIterative_AdjacencyMatrix() {
+        let (a, graph) = makeBasicAdjacencyMatrixUndirectedSUT()
+        let visited = graph.depthFirstSearchIterative(from: a).map { $0.data }
+        XCTAssertEqual(visited, ["A", "D", "C", "G", "F", "E", "H", "B"])
+    }
+    
+    func test_depthFirstSearchRecursive_AdjacencyList() {
+        let (a, graph) = makeBasicAdjacencyListUndirectedSUT()
+        let visited = graph.depthFirstSearchIterative(from: a).map { $0.data }
+        XCTAssertEqual(visited, ["A", "D", "C", "G", "F", "E", "H", "B"])
+    }
+    
+    func test_depthFirstSearchRecursive_AdjacencyMatrix() {
+        let (a, graph) = makeBasicAdjacencyMatrixUndirectedSUT()
+        let visited = graph.depthFirstSearchIterative(from: a).map { $0.data }
+        XCTAssertEqual(visited, ["A", "D", "C", "G", "F", "E", "H", "B"])
+    }
+    
     private func makeBasicAdjacencyMatrixUndirectedSUT() -> (Vertex<String>, AdjacencyMatrix<String>) {
         let graph = AdjacencyMatrix<String>()
         

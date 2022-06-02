@@ -7,6 +7,7 @@
 
 import Foundation
 import Queue
+import Stack
 
 public enum EdgeType {
     case directed
@@ -147,13 +148,42 @@ extension Graph where T: Hashable {
     }
 }
 
-// MARK: - Challenge 3 Disconnected Graph
-
+// MARK: - Breadth First Search Challenge 3 Disconnected Graph
 extension Graph where T: Hashable {
     
     public var isConnected: Bool {
         guard let firstVertex = allVertices.first else { return false }
         return breathFirstSearchRecursive(from: firstVertex).count == allVertices.count ? true : false
+    }
+    
+}
+
+// MARK: - Depth First Search
+extension Graph where T: Hashable {
+    
+    public func depthFirstSearchIterative(from source: Vertex<T>) -> [Vertex<T>] {
+        
+        var stack = Stack<Vertex<T>>()
+        var pushed = Set<Vertex<T>>()
+        var visited = [Vertex<T>]()
+        
+        stack.push(source)
+        pushed.insert(source)
+        
+        while let vertex = stack.pop() {
+            
+            visited.append(vertex)
+            
+            let neighborEdges = edges(from: vertex)
+            
+            for edge in neighborEdges where !pushed.contains(edge.destination) {
+                stack.push(edge.destination)
+                pushed.insert(edge.destination)
+            }
+            
+        }
+        
+        return visited
     }
     
 }
