@@ -204,6 +204,26 @@ class GraphTests: XCTestCase {
         XCTAssertEqual(visited, ["A", "D", "C", "G", "F", "E", "H", "B"])
     }
     
+    func test_containsCycle_DirectedAdjacencyListWithCycle() {
+        let sut = makeAdjacencyListDirectedWithCycleSUT()
+        XCTAssertTrue(sut.containsCycle)
+    }
+    
+    func test_containsCycle_DirectedAdjacencyMatrixWithCycle() {
+        let sut = makeAdjacencyMatrixDirectedWithCycleSUT()
+        XCTAssertTrue(sut.containsCycle)
+    }
+    
+    func test_containsCycle_DirectedAdjacencyListWithoutCycle() {
+        let sut = makeAdjacencyListDirectedWithoutCycleSUT()
+        XCTAssertFalse(sut.containsCycle)
+    }
+    
+    func test_containsCycle_DirectedAdjacencyMatrixWithoutCycle() {
+        let sut = makeAdjacencyMatrixDirectedWithoutCycleSUT()
+        XCTAssertFalse(sut.containsCycle)
+    }
+    
     private func makeBasicAdjacencyMatrixUndirectedSUT() -> (Vertex<String>, AdjacencyMatrix<String>) {
         let graph = AdjacencyMatrix<String>()
         
@@ -425,6 +445,108 @@ class GraphTests: XCTestCase {
         graph.addUndirectedEdge(between: e, and: h, weight: nil)
         graph.addUndirectedEdge(between: e, and: f, weight: nil)
         graph.addUndirectedEdge(between: f, and: g, weight: nil)
+        
+        return graph
+    }
+    
+    private func makeAdjacencyMatrixDirectedWithCycleSUT() -> AdjacencyMatrix<String> {
+        let graph = AdjacencyMatrix<String>()
+        
+        let a = graph.createVertex(data: "A")
+        let b = graph.createVertex(data: "B")
+        let c = graph.createVertex(data: "C")
+        let d = graph.createVertex(data: "D")
+        let e = graph.createVertex(data: "E")
+        let f = graph.createVertex(data: "F")
+        let g = graph.createVertex(data: "G")
+        let h = graph.createVertex(data: "H")
+
+        graph.addDirectedEdge(from: a, to: b, weight: 1)
+        graph.addDirectedEdge(from: a, to: c, weight: 1)
+        graph.addDirectedEdge(from: c, to: a, weight: 1)
+        graph.addDirectedEdge(from: a, to: d, weight: 1)
+        graph.addDirectedEdge(from: b, to: e, weight: 1)
+        graph.addDirectedEdge(from: e, to: h, weight: 1)
+        graph.addDirectedEdge(from: e, to: f, weight: 1)
+        graph.addDirectedEdge(from: f, to: c, weight: 1)
+        graph.addDirectedEdge(from: f, to: g, weight: 1)
+        graph.addDirectedEdge(from: c, to: g, weight: 1)
+        
+        return graph
+    }
+    
+    private func makeAdjacencyListDirectedWithCycleSUT() -> AdjacencyList<String> {
+        let graph = AdjacencyList<String>()
+        
+        let a = graph.createVertex(data: "A")
+        let b = graph.createVertex(data: "B")
+        let c = graph.createVertex(data: "C")
+        let d = graph.createVertex(data: "D")
+        let e = graph.createVertex(data: "E")
+        let f = graph.createVertex(data: "F")
+        let g = graph.createVertex(data: "G")
+        let h = graph.createVertex(data: "H")
+
+        graph.addDirectedEdge(from: a, to: b, weight: nil)
+        graph.addDirectedEdge(from: a, to: c, weight: nil)
+        graph.addDirectedEdge(from: c, to: a, weight: nil)
+        graph.addDirectedEdge(from: a, to: d, weight: nil)
+        graph.addDirectedEdge(from: b, to: e, weight: nil)
+        graph.addDirectedEdge(from: e, to: h, weight: nil)
+        graph.addDirectedEdge(from: e, to: f, weight: nil)
+        graph.addDirectedEdge(from: f, to: c, weight: nil)
+        graph.addDirectedEdge(from: f, to: g, weight: nil)
+        graph.addDirectedEdge(from: c, to: g, weight: nil)
+        
+        return graph
+    }
+    
+    private func makeAdjacencyMatrixDirectedWithoutCycleSUT() -> AdjacencyMatrix<String> {
+        let graph = AdjacencyMatrix<String>()
+        
+        let a = graph.createVertex(data: "A")
+        let b = graph.createVertex(data: "B")
+        let c = graph.createVertex(data: "C")
+        let d = graph.createVertex(data: "D")
+        let e = graph.createVertex(data: "E")
+        let f = graph.createVertex(data: "F")
+        let g = graph.createVertex(data: "G")
+        let h = graph.createVertex(data: "H")
+
+        graph.addDirectedEdge(from: a, to: b, weight: 1)
+        graph.addDirectedEdge(from: a, to: c, weight: 1)
+        graph.addDirectedEdge(from: a, to: d, weight: 1)
+        graph.addDirectedEdge(from: b, to: e, weight: 1)
+        graph.addDirectedEdge(from: e, to: h, weight: 1)
+        graph.addDirectedEdge(from: e, to: f, weight: 1)
+        graph.addDirectedEdge(from: f, to: c, weight: 1)
+        graph.addDirectedEdge(from: f, to: g, weight: 1)
+        graph.addDirectedEdge(from: c, to: g, weight: 1)
+        
+        return graph
+    }
+    
+    private func makeAdjacencyListDirectedWithoutCycleSUT() -> AdjacencyList<String> {
+        let graph = AdjacencyList<String>()
+        
+        let a = graph.createVertex(data: "A")
+        let b = graph.createVertex(data: "B")
+        let c = graph.createVertex(data: "C")
+        let d = graph.createVertex(data: "D")
+        let e = graph.createVertex(data: "E")
+        let f = graph.createVertex(data: "F")
+        let g = graph.createVertex(data: "G")
+        let h = graph.createVertex(data: "H")
+
+        graph.addDirectedEdge(from: a, to: b, weight: nil)
+        graph.addDirectedEdge(from: a, to: c, weight: nil)
+        graph.addDirectedEdge(from: a, to: d, weight: nil)
+        graph.addDirectedEdge(from: b, to: e, weight: nil)
+        graph.addDirectedEdge(from: e, to: h, weight: nil)
+        graph.addDirectedEdge(from: e, to: f, weight: nil)
+        graph.addDirectedEdge(from: f, to: c, weight: nil)
+        graph.addDirectedEdge(from: f, to: g, weight: nil)
+        graph.addDirectedEdge(from: c, to: g, weight: nil)
         
         return graph
     }

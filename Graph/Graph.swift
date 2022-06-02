@@ -214,3 +214,30 @@ extension Graph where T: Hashable {
         return dfs(stack: &stack, visited: &visited, pushed: &pushed)
     }
 }
+
+// MARK: - Depth First Search Challenge 3: Detect a cycle
+extension Graph where T: Hashable {
+    
+    var containsCycle: Bool {
+        guard let firstVertex = allVertices.first else { return false }
+        var pushed = Set<Vertex<T>>()
+        return findCycle(from: firstVertex, pushed: &pushed)
+    }
+    
+    private func findCycle(from source: Vertex<T>, pushed: inout Set<Vertex<T>>) -> Bool {
+        
+        pushed.insert(source)
+        
+        let neighborEdges = edges(from: source)
+        
+        for edge in neighborEdges {
+            if !pushed.contains(edge.destination) && findCycle(from: edge.destination, pushed: &pushed) {
+                return true
+            } else if pushed.contains(edge.destination) {
+                return true
+            }
+        }
+        pushed.remove(source) 
+        return false
+    }
+}
