@@ -29,7 +29,6 @@ public protocol Graph {
              weight: Double?)
     func edges(from source: Vertex<T>) -> [Edge<T>]
     func weight(from source: Vertex<T>, to destination: Vertex<T>) -> Double?
-    
 }
 
 extension Graph {
@@ -93,7 +92,7 @@ extension Graph where T: Hashable {
 // MARK: - Breadth First Search
 extension Graph where T: Hashable {
     
-    func breathFirstSearch(from source: Vertex<T>) -> [Vertex<T>] {
+    public func breathFirstSearchIterative(from source: Vertex<T>) -> [Vertex<T>] {
         
         var queue = QueueDoubleStack<Vertex<T>>()
         var enqueued = Set<Vertex<T>>()
@@ -115,5 +114,33 @@ extension Graph where T: Hashable {
         }
         
         return visited
+    }
+    
+    public func breathFirstSearchRecursive(from source: Vertex<T>) -> [Vertex<T>] {
+        
+        var queue = QueueDoubleStack<Vertex<T>>()
+        var enqueued = Set<Vertex<T>>()
+        var visited = [Vertex<T>]()
+        
+        _ = queue.enqueue(source)
+        enqueued.insert(source)
+        
+        return bfs(queue: &queue, visited: &visited, enqueued: &enqueued)
+    }
+    
+    private func bfs(queue: inout QueueDoubleStack<Vertex<T>>, visited: inout [Vertex<T>], enqueued: inout Set<Vertex<T>>) -> [Vertex<T>] {
+        
+        guard let currentVertex = queue.dequeue() else { return visited }
+        
+        visited.append(currentVertex)
+        
+        let neighborEdges = edges(from: currentVertex)
+        
+        for edge in neighborEdges where !enqueued.contains(edge.destination) {
+            _ = queue.enqueue(edge.destination)
+            enqueued.insert(edge.destination)
+        }
+        
+        return bfs(queue: &queue, visited: &visited, enqueued: &enqueued)
     }
 }

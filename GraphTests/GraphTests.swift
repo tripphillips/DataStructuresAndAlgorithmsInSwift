@@ -136,15 +136,27 @@ class GraphTests: XCTestCase {
         XCTAssertEqual(mutualFriends.first, "cole")
     }
     
-    func test_breadthFirstSearch_AdjacencyList() {
+    func test_breadthFirstSearchIterative_AdjacencyList() {
         let (a, graph) = makeBasicAdjacencyListUndirectedSUT()
-        let visited = graph.breathFirstSearch(from: a).map { $0.data }
+        let visited = graph.breathFirstSearchIterative(from: a).map { $0.data }
         XCTAssertEqual(visited, ["A", "B", "C", "D", "E", "F", "G", "H"])
     }
     
-    func test_breadthFirstSearch_AdjacencyMatrix() {
+    func test_breadthFirstSearchIterative_AdjacencyMatrix() {
         let (a, graph) = makeBasicAdjacencyMatrixUndirectedSUT()
-        let visited = graph.breathFirstSearch(from: a).map { $0.data }
+        let visited = graph.breathFirstSearchIterative(from: a).map { $0.data }
+        XCTAssertEqual(visited, ["A", "B", "C", "D", "E", "F", "G", "H"])
+    }
+    
+    func test_breadthFirstSearchRecursive_AdjacencyList() {
+        let (a, graph) = makeBasicAdjacencyListUndirectedSUT()
+        let visited = graph.breathFirstSearchRecursive(from: a).map { $0.data }
+        XCTAssertEqual(visited, ["A", "B", "C", "D", "E", "F", "G", "H"])
+    }
+    
+    func test_breadthFirstSearchRecursive_AdjacencyMatrix() {
+        let (a, graph) = makeBasicAdjacencyMatrixUndirectedSUT()
+        let visited = graph.breathFirstSearchRecursive(from: a).map { $0.data }
         XCTAssertEqual(visited, ["A", "B", "C", "D", "E", "F", "G", "H"])
     }
     
