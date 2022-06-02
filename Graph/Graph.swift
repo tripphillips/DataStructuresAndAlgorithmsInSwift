@@ -186,4 +186,31 @@ extension Graph where T: Hashable {
         return visited
     }
     
+    public func depthFirstSearchRecursive(from source: Vertex<T>) -> [Vertex<T>] {
+        
+        var stack = Stack<Vertex<T>>()
+        var pushed = Set<Vertex<T>>()
+        var visited = [Vertex<T>]()
+        
+        stack.push(source)
+        pushed.insert(source)
+        
+        return dfs(stack: &stack, visited: &visited, pushed: &pushed)
+    }
+    
+    private func dfs(stack: inout Stack<Vertex<T>>, visited: inout [Vertex<T>], pushed: inout Set<Vertex<T>>) -> [Vertex<T>] {
+        
+        guard let currentVertex = stack.pop() else { return visited }
+        
+        visited.append(currentVertex)
+        
+        let neighborEdges = edges(from: currentVertex)
+        
+        for edge in neighborEdges where !pushed.contains(edge.destination) {
+            stack.push(edge.destination)
+            pushed.insert(edge.destination)
+        }
+        
+        return dfs(stack: &stack, visited: &visited, pushed: &pushed)
+    }
 }
