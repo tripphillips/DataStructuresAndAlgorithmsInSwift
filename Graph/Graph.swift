@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Queue
 
 public enum EdgeType {
     case directed
@@ -86,5 +87,35 @@ extension Graph where T: Hashable {
         }
         
         visited.remove(source)
+    }
+}
+
+// MARK: - Breadth First Search
+extension Graph where T: Hashable {
+    
+    func breathFirstSearch(from source: Vertex<T>) -> [Vertex<T>] {
+        
+        var queue = QueueDoubleStack<Vertex<T>>()
+        var enqueued = Set<Vertex<T>>()
+        var visited = [Vertex<T>]()
+        
+        _ = queue.enqueue(source)
+        enqueued.insert(source)
+        
+        while let vertex = queue.dequeue() {
+            visited.append(vertex)
+            
+            let neighborEdges = edges(from: vertex)
+            
+            neighborEdges.forEach { edge in
+                if !enqueued.contains(edge.destination) { // 5
+                  queue.enqueue(edge.destination)
+                  enqueued.insert(edge.destination)
+                }
+              }
+        
+        }
+        
+        return visited
     }
 }

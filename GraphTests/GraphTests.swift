@@ -136,6 +136,68 @@ class GraphTests: XCTestCase {
         XCTAssertEqual(mutualFriends.first, "cole")
     }
     
+    func test_breadthFirstSearch_AdjacencyList() {
+        let (a, graph) = makeBasicAdjacencyListUndirectedSUT()
+        let visited = graph.breathFirstSearch(from: a).map { $0.data }
+        XCTAssertEqual(visited, ["A", "B", "C", "D", "E", "F", "G", "H"])
+    }
+    
+    func test_breadthFirstSearch_AdjacencyMatrix() {
+        let (a, graph) = makeBasicAdjacencyMatrixUndirectedSUT()
+        let visited = graph.breathFirstSearch(from: a).map { $0.data }
+        XCTAssertEqual(visited, ["A", "B", "C", "D", "E", "F", "G", "H"])
+    }
+    
+    private func makeBasicAdjacencyMatrixUndirectedSUT() -> (Vertex<String>, AdjacencyMatrix<String>) {
+        let graph = AdjacencyMatrix<String>()
+        
+        let a = graph.createVertex(data: "A")
+        let b = graph.createVertex(data: "B")
+        let c = graph.createVertex(data: "C")
+        let d = graph.createVertex(data: "D")
+        let e = graph.createVertex(data: "E")
+        let f = graph.createVertex(data: "F")
+        let g = graph.createVertex(data: "G")
+        let h = graph.createVertex(data: "H")
+
+        graph.add(.undirected, from: a, to: b, weight: 1)
+        graph.add(.undirected, from: a, to: c, weight: 1)
+        graph.add(.undirected, from: a, to: d, weight: 1)
+        graph.add(.undirected, from: b, to: e, weight: 1)
+        graph.add(.undirected, from: c, to: f, weight: 1)
+        graph.add(.undirected, from: c, to: g, weight: 1)
+        graph.add(.undirected, from: e, to: h, weight: 1)
+        graph.add(.undirected, from: e, to: f, weight: 1)
+        graph.add(.undirected, from: f, to: g, weight: 1)
+        
+        return (a, graph)
+    }
+    
+    private func makeBasicAdjacencyListUndirectedSUT() -> (Vertex<String>, AdjacencyList<String>) {
+        let graph = AdjacencyList<String>()
+        
+        let a = graph.createVertex(data: "A")
+        let b = graph.createVertex(data: "B")
+        let c = graph.createVertex(data: "C")
+        let d = graph.createVertex(data: "D")
+        let e = graph.createVertex(data: "E")
+        let f = graph.createVertex(data: "F")
+        let g = graph.createVertex(data: "G")
+        let h = graph.createVertex(data: "H")
+
+        graph.addUndirectedEdge(between: a, and: b, weight: nil)
+        graph.addUndirectedEdge(between: a, and: c, weight: nil)
+        graph.addUndirectedEdge(between: a, and: d, weight: nil)
+        graph.addUndirectedEdge(between: b, and: e, weight: nil)
+        graph.addUndirectedEdge(between: e, and: h, weight: nil)
+        graph.addUndirectedEdge(between: e, and: f, weight: nil)
+        graph.addUndirectedEdge(between: f, and: c, weight: nil)
+        graph.addUndirectedEdge(between: f, and: g, weight: nil)
+        graph.addUndirectedEdge(between: c, and: g, weight: nil)
+        
+        return (a, graph)
+    }
+    
     private func makeAdjacencyMatrixUndirectedSUT() -> (Vertex<String>, Vertex<String>, AdjacencyMatrix<String>) {
         let graph = AdjacencyMatrix<String>()
         
