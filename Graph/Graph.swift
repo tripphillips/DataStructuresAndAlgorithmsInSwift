@@ -36,7 +36,7 @@ extension Graph {
                                   and destination: Vertex<T>,
                                   weight: Double?) {
         addDirectedEdge(from: source, to: destination, weight: weight)
-        addDirectedEdge(from: source, to: destination, weight: weight)
+        addDirectedEdge(from: destination, to: source, weight: weight)
     }
     
     public func add(_ edge: EdgeType,
