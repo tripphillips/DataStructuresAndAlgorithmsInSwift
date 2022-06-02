@@ -16,6 +16,8 @@ public enum EdgeType {
 public protocol Graph {
     associatedtype T
     
+    var allVertices: [Vertex<T>] { get }
+    
     func createVertex(data: T) -> Vertex<T>
     func addDirectedEdge(from source: Vertex<T>,
                          to destination: Vertex<T>,
@@ -143,4 +145,15 @@ extension Graph where T: Hashable {
         
         return bfs(queue: &queue, visited: &visited, enqueued: &enqueued)
     }
+}
+
+// MARK: - Challenge 3 Disconnected Graph
+
+extension Graph where T: Hashable {
+    
+    public var isConnected: Bool {
+        guard let firstVertex = allVertices.first else { return false }
+        return breathFirstSearchRecursive(from: firstVertex).count == allVertices.count ? true : false
+    }
+    
 }

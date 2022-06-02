@@ -14,6 +14,10 @@ public class AdjacencyMatrix<T>: Graph {
     
     public init() {}
     
+    public var allVertices: [Vertex<T>] {
+      vertices
+    }
+    
     public func createVertex(data: T) -> Vertex<T> {
         let vertex = Vertex(index: vertices.count, data: data)
         vertices.append(vertex)

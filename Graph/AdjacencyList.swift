@@ -13,6 +13,10 @@ public class AdjacencyList<T: Hashable>: Graph {
     
     public init() {}
     
+    public var allVertices: [Vertex<T>] {
+        Array(adjacencies.keys)
+    }
+    
     public func createVertex(data: T) -> Vertex<T> {
         let vertex = Vertex(index: adjacencies.count, data: data)
         adjacencies[vertex] = []

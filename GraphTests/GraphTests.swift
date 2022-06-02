@@ -160,6 +160,26 @@ class GraphTests: XCTestCase {
         XCTAssertEqual(visited, ["A", "B", "C", "D", "E", "F", "G", "H"])
     }
     
+    func test_isConnected_ConnectedAdjacencyList() {
+        let sut = makeConnectedAdjacencyListUndirectedSUT()
+        XCTAssertTrue(sut.isConnected)
+    }
+    
+    func test_isConnected_ConnectedAdjacencyMatrix() {
+        let sut = makeConnectedAdjacencyMatrixUndirectedSUT()
+        XCTAssertTrue(sut.isConnected)
+    }
+    
+    func test_isConnected_DisconnectedAdjacencyList() {
+        let sut = makeDisconnectedAdjacencyListUndirectedSUT()
+        XCTAssertFalse(sut.isConnected)
+    }
+    
+    func test_isConnected_DisconnectedAdjacencyMatrix() {
+        let sut = makeDisconnectedAdjacencyMatrixUndirectedSUT()
+        XCTAssertFalse(sut.isConnected)
+    }
+    
     private func makeBasicAdjacencyMatrixUndirectedSUT() -> (Vertex<String>, AdjacencyMatrix<String>) {
         let graph = AdjacencyMatrix<String>()
         
@@ -289,5 +309,99 @@ class GraphTests: XCTestCase {
         graph.add(.undirected, from: cole, to: vincent, weight: 1)
         
         return (vincent, ruiz, graph)
+    }
+    
+    private func makeConnectedAdjacencyMatrixUndirectedSUT() -> AdjacencyMatrix<String> {
+        let graph = AdjacencyMatrix<String>()
+        
+        let a = graph.createVertex(data: "A")
+        let b = graph.createVertex(data: "B")
+        let c = graph.createVertex(data: "C")
+        let d = graph.createVertex(data: "D")
+        let e = graph.createVertex(data: "E")
+        let f = graph.createVertex(data: "F")
+        let g = graph.createVertex(data: "G")
+        let h = graph.createVertex(data: "H")
+
+        graph.add(.undirected, from: a, to: b, weight: 1)
+        graph.add(.undirected, from: a, to: c, weight: 1)
+        graph.add(.undirected, from: a, to: d, weight: 1)
+        graph.add(.undirected, from: b, to: e, weight: 1)
+        graph.add(.undirected, from: c, to: f, weight: 1)
+        graph.add(.undirected, from: c, to: g, weight: 1)
+        graph.add(.undirected, from: e, to: h, weight: 1)
+        graph.add(.undirected, from: e, to: f, weight: 1)
+        graph.add(.undirected, from: f, to: g, weight: 1)
+        
+        return graph
+    }
+    
+    private func makeConnectedAdjacencyListUndirectedSUT() -> AdjacencyList<String> {
+        let graph = AdjacencyList<String>()
+        
+        let a = graph.createVertex(data: "A")
+        let b = graph.createVertex(data: "B")
+        let c = graph.createVertex(data: "C")
+        let d = graph.createVertex(data: "D")
+        let e = graph.createVertex(data: "E")
+        let f = graph.createVertex(data: "F")
+        let g = graph.createVertex(data: "G")
+        let h = graph.createVertex(data: "H")
+
+        graph.addUndirectedEdge(between: a, and: b, weight: nil)
+        graph.addUndirectedEdge(between: a, and: c, weight: nil)
+        graph.addUndirectedEdge(between: a, and: d, weight: nil)
+        graph.addUndirectedEdge(between: b, and: e, weight: nil)
+        graph.addUndirectedEdge(between: e, and: h, weight: nil)
+        graph.addUndirectedEdge(between: e, and: f, weight: nil)
+        graph.addUndirectedEdge(between: f, and: c, weight: nil)
+        graph.addUndirectedEdge(between: f, and: g, weight: nil)
+        graph.addUndirectedEdge(between: c, and: g, weight: nil)
+        
+        return graph
+    }
+    
+    private func makeDisconnectedAdjacencyMatrixUndirectedSUT() -> AdjacencyMatrix<String> {
+        let graph = AdjacencyMatrix<String>()
+        
+        let a = graph.createVertex(data: "A")
+        let b = graph.createVertex(data: "B")
+        let c = graph.createVertex(data: "C")
+        let d = graph.createVertex(data: "D")
+        let e = graph.createVertex(data: "E")
+        let f = graph.createVertex(data: "F")
+        let g = graph.createVertex(data: "G")
+        let h = graph.createVertex(data: "H")
+
+        graph.add(.undirected, from: a, to: b, weight: 1)
+        graph.add(.undirected, from: a, to: c, weight: 1)
+        graph.add(.undirected, from: a, to: d, weight: 1)
+        graph.add(.undirected, from: e, to: h, weight: 1)
+        graph.add(.undirected, from: e, to: f, weight: 1)
+        graph.add(.undirected, from: f, to: g, weight: 1)
+        
+        return graph
+    }
+    
+    private func makeDisconnectedAdjacencyListUndirectedSUT() -> AdjacencyList<String> {
+        let graph = AdjacencyList<String>()
+        
+        let a = graph.createVertex(data: "A")
+        let b = graph.createVertex(data: "B")
+        let c = graph.createVertex(data: "C")
+        let d = graph.createVertex(data: "D")
+        let e = graph.createVertex(data: "E")
+        let f = graph.createVertex(data: "F")
+        let g = graph.createVertex(data: "G")
+        let h = graph.createVertex(data: "H")
+
+        graph.addUndirectedEdge(between: a, and: b, weight: nil)
+        graph.addUndirectedEdge(between: a, and: c, weight: nil)
+        graph.addUndirectedEdge(between: a, and: d, weight: nil)
+        graph.addUndirectedEdge(between: e, and: h, weight: nil)
+        graph.addUndirectedEdge(between: e, and: f, weight: nil)
+        graph.addUndirectedEdge(between: f, and: g, weight: nil)
+        
+        return graph
     }
 }
