@@ -107,12 +107,10 @@ extension Graph where T: Hashable {
             
             let neighborEdges = edges(from: vertex)
             
-            neighborEdges.forEach { edge in
-                if !enqueued.contains(edge.destination) { // 5
-                  queue.enqueue(edge.destination)
-                  enqueued.insert(edge.destination)
-                }
-              }
+            for edge in neighborEdges where !enqueued.contains(edge.destination) {
+                _ = queue.enqueue(edge.destination)
+                enqueued.insert(edge.destination)
+            }
         
         }
         
