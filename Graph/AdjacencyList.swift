@@ -13,7 +13,7 @@ public class AdjacencyList<T: Hashable>: Graph {
     
     public init() {}
     
-    public var allVertices: [Vertex<T>] {
+    public var vertices: [Vertex<T>] {
         Array(adjacencies.keys)
     }
     
@@ -40,6 +40,12 @@ public class AdjacencyList<T: Hashable>: Graph {
         edges(from: source)
             .first { $0.destination == destination }?
             .weight
+    }
+    
+    public func copyVertices(from graph: AdjacencyList) {
+        for vertex in graph.vertices {
+            adjacencies[vertex] = []
+        }
     }
 }
 

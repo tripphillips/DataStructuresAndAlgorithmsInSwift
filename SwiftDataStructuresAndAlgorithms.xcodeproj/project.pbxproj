@@ -26,6 +26,8 @@
 		0D925B252847B75B00BC4100 /* AdjacencyMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D925B242847B75B00BC4100 /* AdjacencyMatrix.swift */; };
 		0D925B27284994D000BC4100 /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D925B26284994D000BC4100 /* Dijkstra.swift */; };
 		0D925B292849999000BC4100 /* DijkstraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D925B282849999000BC4100 /* DijkstraTests.swift */; };
+		0D925B2B2849AE3B00BC4100 /* Prim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D925B2A2849AE3B00BC4100 /* Prim.swift */; };
+		0D925B2D2849B1FA00BC4100 /* PrimTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D925B2C2849B1FA00BC4100 /* PrimTests.swift */; };
 		0D9D41C628241BBD0022FA74 /* Tree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D41BE28241BBD0022FA74 /* Tree.framework */; };
 		0D9D41CB28241BBD0022FA74 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D41CA28241BBD0022FA74 /* TreeTests.swift */; };
 		0D9D41D428241BF20022FA74 /* Tree.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D9D41D328241BF20022FA74 /* Tree.h */; };
@@ -315,6 +317,8 @@
 		0D925B242847B75B00BC4100 /* AdjacencyMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyMatrix.swift; sourceTree = "<group>"; };
 		0D925B26284994D000BC4100 /* Dijkstra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dijkstra.swift; sourceTree = "<group>"; };
 		0D925B282849999000BC4100 /* DijkstraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DijkstraTests.swift; sourceTree = "<group>"; };
+		0D925B2A2849AE3B00BC4100 /* Prim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prim.swift; sourceTree = "<group>"; };
+		0D925B2C2849B1FA00BC4100 /* PrimTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimTests.swift; sourceTree = "<group>"; };
 		0D9D41BE28241BBD0022FA74 /* Tree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D9D41C528241BBD0022FA74 /* TreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D9D41CA28241BBD0022FA74 /* TreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
@@ -721,6 +725,7 @@
 				0D925B222847AA4000BC4100 /* AdjacencyList.swift */,
 				0D925B242847B75B00BC4100 /* AdjacencyMatrix.swift */,
 				0D925B26284994D000BC4100 /* Dijkstra.swift */,
+				0D925B2A2849AE3B00BC4100 /* Prim.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -730,6 +735,7 @@
 			children = (
 				0D925B132847A69F00BC4100 /* GraphTests.swift */,
 				0D925B282849999000BC4100 /* DijkstraTests.swift */,
+				0D925B2C2849B1FA00BC4100 /* PrimTests.swift */,
 			);
 			path = GraphTests;
 			sourceTree = "<group>";
@@ -2348,6 +2354,7 @@
 			files = (
 				0D925B232847AA4000BC4100 /* AdjacencyList.swift in Sources */,
 				0D925B252847B75B00BC4100 /* AdjacencyMatrix.swift in Sources */,
+				0D925B2B2849AE3B00BC4100 /* Prim.swift in Sources */,
 				0D925B1F2847A88C00BC4100 /* Vertex.swift in Sources */,
 				0D925B1D2847A6AE00BC4100 /* Graph.swift in Sources */,
 				0D925B212847A99D00BC4100 /* Edge.swift in Sources */,
@@ -2359,6 +2366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D925B2D2849B1FA00BC4100 /* PrimTests.swift in Sources */,
 				0D925B142847A69F00BC4100 /* GraphTests.swift in Sources */,
 				0D925B292849999000BC4100 /* DijkstraTests.swift in Sources */,
 			);

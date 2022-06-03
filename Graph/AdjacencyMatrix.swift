@@ -9,22 +9,22 @@ import Foundation
 
 public class AdjacencyMatrix<T>: Graph {
     
-    private var vertices: [Vertex<T>] = []
+    private var allVertices: [Vertex<T>] = []
     private var weights: [[Double?]] = []
     
     public init() {}
     
-    public var allVertices: [Vertex<T>] {
-      vertices
+    public var vertices: [Vertex<T>] {
+        allVertices
     }
     
     public func createVertex(data: T) -> Vertex<T> {
-        let vertex = Vertex(index: vertices.count, data: data)
-        vertices.append(vertex)
+        let vertex = Vertex(index: allVertices.count, data: data)
+        allVertices.append(vertex)
         for i in 0..<weights.count {
             weights[i].append(nil)
         }
-        let row = [Double?](repeating: nil, count: vertices.count)
+        let row = [Double?](repeating: nil, count: allVertices.count)
         weights.append(row)
         return vertex
     }
@@ -38,7 +38,7 @@ public class AdjacencyMatrix<T>: Graph {
         for column in 0..<weights.count {
             if let weight = weights[source.index][column] {
                 edges.append(Edge(source: source,
-                                  destination: vertices[column],
+                                  destination: allVertices[column],
                                   weight: weight))
             }
         }
@@ -54,7 +54,7 @@ extension AdjacencyMatrix: CustomStringConvertible {
 
   public var description: String {
     // 1
-    let verticesDescription = vertices.map { "\($0)" }
+    let verticesDescription = allVertices.map { "\($0)" }
                                       .joined(separator: "\n")
     // 2
     var grid: [String] = []

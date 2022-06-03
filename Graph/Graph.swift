@@ -17,7 +17,7 @@ public enum EdgeType {
 public protocol Graph {
     associatedtype T
     
-    var allVertices: [Vertex<T>] { get }
+    var vertices: [Vertex<T>] { get }
     
     func createVertex(data: T) -> Vertex<T>
     func addDirectedEdge(from source: Vertex<T>,
@@ -152,8 +152,8 @@ extension Graph where T: Hashable {
 extension Graph where T: Hashable {
     
     public var isConnected: Bool {
-        guard let firstVertex = allVertices.first else { return false }
-        return breathFirstSearchRecursive(from: firstVertex).count == allVertices.count ? true : false
+        guard let firstVertex = vertices.first else { return false }
+        return breathFirstSearchRecursive(from: firstVertex).count == vertices.count ? true : false
     }
     
 }
@@ -219,7 +219,7 @@ extension Graph where T: Hashable {
 extension Graph where T: Hashable {
     
     var containsCycle: Bool {
-        guard let firstVertex = allVertices.first else { return false }
+        guard let firstVertex = vertices.first else { return false }
         var pushed = Set<Vertex<T>>()
         return findCycle(from: firstVertex, pushed: &pushed)
     }
@@ -237,7 +237,7 @@ extension Graph where T: Hashable {
                 return true
             }
         }
-        pushed.remove(source) 
+        
         return false
     }
 }
